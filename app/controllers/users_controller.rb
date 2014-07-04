@@ -3,8 +3,9 @@ class UsersController < ApplicationController
     @user = User.new
   end
   
-  def index
+  def index 
     @users = User.all
+  
   end
 
   def create

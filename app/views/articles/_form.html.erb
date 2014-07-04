@@ -19,7 +19,13 @@
     <%= f.label :text %><br>
     <%= f.text_area :text %>
   </p>
- 
+
+
+
+   <%= f.fields_for :articles do |article_fields| %>
+  User?: <%= article_fields.check_box :user %>
+<% end %>
+
   <p>
     <%= f.submit %>
   </p>
