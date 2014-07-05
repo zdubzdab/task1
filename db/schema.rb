@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20140704114104) do
     t.datetime "updated_at"
     t.integer  "user_id"
   end
-
+ 
   add_index "articles", ["user_id"], name: "index_articles_on_user_id"
 
   create_table "users", force: true do |t|
