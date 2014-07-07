@@ -1,4 +1,4 @@
- <h1>Listing Users</h1>
+ <h1>Listing Users</h1> 
 <%= link_to 'New user', new_user_path %>
 <table>
   <tr>
@@ -9,10 +9,11 @@
   </tr>
   
 <% @users.each do |user| %>
-  <tr>
+  <tr> 
     <td><%= user.name %></td>
-    <td><%= user.email %></td>
-    <td><%= user.articles %></td>
+    <td><%= user.email %> </td>
+
+    <td><%= Article.all.map {|a| [a.id]} %></td>
     <td><%= link_to 'Show', user_path(user) %></td>
     <td><%= link_to 'Destroy', user_path(user),
                     method: :delete, data: { confirm: 'Are you sure?' } %></td>
