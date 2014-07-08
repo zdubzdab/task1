@@ -1,6 +1,6 @@
- <%= form_for @tag do |f| %>
+ <%= form_for @tag do |f| %> 
   <% if @tag.errors.any? %> 
-  <div id="error_explanation">
+  <div id="error_explanation"> 
     <h2><%= pluralize(@tag.errors.count, "error") %> prohibited
       this tag from being saved:</h2>
     <ul>
@@ -12,8 +12,14 @@
   <% end %>
 
   <p>
-    <%= f.label :tag %><br>
-    <%= f.text_field :tag %>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
   </p>
-
+  <p>
+    <%= f.label :article_id, "Article" %><br>
+    <%= f.select :article_id, Article.all.map{|a| [a.title, a.id]} %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
   <% end %>

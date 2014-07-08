@@ -2,7 +2,7 @@
   def new
     @article = Article.new
   end
-  def index
+  def index 
     @articles = Article.all
   end
  
@@ -17,7 +17,7 @@
   end
  
   def show
-      @articles = Article.all
+    @article = Article.find(params[:id])
   end
 
   def edit
@@ -41,6 +41,9 @@
     redirect_to articles_path
   end
 
-
+private
+  def article_params
+    params.require(:article).permit(:title, :text, :id)
+  end
 
 end

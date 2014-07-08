@@ -20,10 +20,6 @@
     <%= f.text_field :email %>
   </p>
 
-    <p>
-    <%= f.label :article_id, "Article" %><br>
-    <%= f.select :article_id, Article.all.map{|a| [a.title, a.id]} %>
-  </p>
   <p>
     <%= f.submit %>
   </p>
