@@ -5,4 +5,5 @@ class Article < ActiveRecord::Base
                     length: { minimum: 3 },
                     uniqueness: true
   validates :text, presence: true
+  def to_s
 end 

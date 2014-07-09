@@ -10,14 +10,16 @@
     </ul>
   </div>
   <% end %>
-
+ 
   <p>
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label :article_id, "Article" %><br>
-    <%= f.select :article_id, Article.all.map{|a| [a.title, a.id]} %>
+    <%= f.label :article_id, "User" %><br>
+    <% ar_array = Article.all.map { |ar| [ar.title, ar.id] } %>
+    <%= options_for_select(ar_array) %>
+    <%= f.select(:article, :article_id, ar_array, {}, {:multiple => true, :size => 10}) %>
   </p>
   <p>
     <%= f.submit %>

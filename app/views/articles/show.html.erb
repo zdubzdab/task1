@@ -7,4 +7,8 @@
   <strong>Text:</strong>
   <%= @article.text %>
 </p> 
+  <p>
+    <%= f.label :tag_id, "Tag" %><br>
+    <%= f.select :tag_id, Tag.all.map{|u| [u.name, u.id]} %>
+  </p>
 <%= link_to 'Back', articles_path %>
