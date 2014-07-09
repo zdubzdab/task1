@@ -15,11 +15,10 @@
     <%= f.label :name %><br>
     <%= f.text_field :name %>
   </p>
-  <p>
-    <%= f.label :article_id, "User" %><br>
-    <% ar_array = Article.all.map { |ar| [ar.title, ar.id] } %>
-    <%= options_for_select(ar_array) %>
-    <%= f.select(:article, :article_id, ar_array, {}, {:multiple => true, :size => 10}) %>
+  <p> 
+    <%= f.label :article_id, "Articles" %><br>
+    <%= options_from_collection_for_select(Article.all, :id, :title) %>
+    <%= collection_select(:article, :article_id, Article.all, :id, :title, {}, {:multiple => true}) %>
   </p>
   <p>
     <%= f.submit %>

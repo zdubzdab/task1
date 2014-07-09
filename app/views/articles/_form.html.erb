@@ -21,9 +21,7 @@
   </p>
   <p>
     <%= f.label :user_id, "User" %><br>
-
-    <%= options_from_collection_for_select(User.all, :id, :name) %>
-    <%= collection_select(:user, :user_id, User.all, :id, :name, {}, {:multiple => true, :size => 10}) %>
+    <%= f.select :user_id, User.all.map{|u| [u.name, u.id]} %>  
   </p>
 
   <p>

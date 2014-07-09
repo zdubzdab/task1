@@ -6,4 +6,5 @@ class Article < ActiveRecord::Base
                     uniqueness: true
   validates :text, presence: true
   def to_s
+  end
 end 
