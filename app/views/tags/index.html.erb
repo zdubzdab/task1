@@ -9,7 +9,7 @@
 <% @tags.each do |tag| %>
   <tr> 
     <td><%= tag.name %></td>
-    <td><%= tag.article.try(&:title) %></td>
+    <td><%= tag.articles %></td>
     <td><%= link_to 'Show', tag_path(tag) %></td>
     <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
     <td><%= link_to 'Destroy', tag_path(tag),
