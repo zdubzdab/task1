@@ -17,7 +17,6 @@
   </p>
   <p> 
     <%= f.label :article_ids, "Articles" %><br>
-    <%= options_from_collection_for_select(Article.all, :id, :title) %>
     <%= collection_select(:article, :article_ids, Article.all, :id, :title, {}, {:multiple => true}) %>
   </p>
   <p>
