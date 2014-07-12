@@ -12,6 +12,7 @@ class CreateUsers < ActiveRecord::Migration
         t.string :title
         t.text :text
         t.timestamps
+    end
   end
 end
  

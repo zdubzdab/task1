@@ -9,6 +9,5 @@ class User < ActiveRecord::Base
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i,
                     message: "правильний формат emaila: xxx@xxx.xxx" } ,
                     uniqueness: true
-def to_s
-end
+
 end                    
