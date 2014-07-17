@@ -1,4 +1,6 @@
-<header class="navbar-inner">
+<header class="navbar navbar-inner">
+  <div class="container"> 
+    <%= link_to "Task", root_path, id: "logo" %>
               <nav>
               <ul class="nav pull-right">
                 <li><%= link_to 'User', users_path %></li>
@@ -6,4 +8,5 @@
                 <li><%= link_to 'Tag', tags_path %></li>
               </ul>
             </nav>
+  </div>
 </header>
