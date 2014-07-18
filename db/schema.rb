@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20140718110400) do
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "tag_id"
   end
 
   create_table "articles_tags", id: false, force: true do |t|

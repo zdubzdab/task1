@@ -19,6 +19,10 @@
     <%= f.label :article_ids, "Articles" %><br>
     <%= collection_select(:article, :article_ids, Article.all, :id, :title, {}, {:multiple => true}) %>
   </p>
+  <p> 
+    <%= f.label :user_ids, "Users" %><br>
+    <%= collection_select(:user, :user_ids, User.all, :id, :name, {}, {:multiple => true}) %>
+  </p>
   <p>
     <%= f.submit %>
   </p>
