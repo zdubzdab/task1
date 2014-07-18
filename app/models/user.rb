@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   has_many :articles
+  has_many :tags, through: :articles
   validates :name, presence: true,
                     length: { minimum: 3 },
                     format: { with: /\A[a-z]+\z/i,
@@ -10,4 +11,4 @@ class User < ActiveRecord::Base
                     message: "правильний формат emaila: xxx@xxx.xxx" } ,
                     uniqueness: true
 
-end                    
+end  

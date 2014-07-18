@@ -11,39 +11,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140707172222) do
+ActiveRecord::Schema.define(version: 20140718110400) do
 
   create_table "articles", force: true do |t|
+    t.integer  "user_id"
     t.string   "title"
     t.text     "text"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "user_id"
   end
-
-  add_index "articles", ["user_id"], name: "index_articles_on_user_id"
 
   create_table "articles_tags", id: false, force: true do |t|
     t.integer "article_id"
     t.integer "tag_id"
   end
-
-  create_table "articles_users", id: false, force: true do |t|
-    t.integer "article_id", null: false
-    t.integer "user_id",    null: false
-  end
-
-  add_index "articles_users", ["user_id", "article_id"], name: "index_articles_users_on_user_id_and_article_id"
-
-  create_table "comments", force: true do |t|
-    t.string   "commenter"
-    t.text     "body"
-    t.integer  "article_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  add_index "comments", ["article_id"], name: "index_comments_on_article_id"
 
   create_table "tags", force: true do |t|
     t.string   "name"
@@ -51,23 +32,7 @@ ActiveRecord::Schema.define(version: 20140707172222) do
     t.datetime "updated_at"
   end
 
-  create_table "uarticles", force: true do |t|
-    t.integer  "users_articles_id"
-    t.string   "title"
-    t.text     "text"
-    t.datetime "uarticle_date"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "users", force: true do |t|
-    t.string   "name"
-    t.string   "email"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
-  create_table "users_articles", force: true do |t|
     t.string   "name"
     t.string   "email"
     t.datetime "created_at"

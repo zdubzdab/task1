@@ -7,14 +7,18 @@
     <tr>
       <th>Name</th>
       <th>Email</th>
-      <th>Articles</th>
-      <th>Сanges</th>
+      <th>Users articles</th>
+      <th>Users tags</th>
+      <th>Show</th>
+      <th>Edit</th>      
+      <th>Destroy</th>
     </tr>
   <% @users.each do |user| %>
     <tr> 
       <td><%= user.name %></td>
       <td><%= user.email %> </td>
       <td><%= user.articles.try(&:name) %></td>
+      <td><%= user.tags.try(&:name) %></td>
       <td><%= link_to 'Show', user_path(user) %></td>
       <td><%= link_to 'Edit', edit_user_path(user) %></td>
       <td><%= link_to 'Destroy', user_path(user),
