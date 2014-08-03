@@ -13,15 +13,16 @@
  
   <p>
     <%= f.label :name %><br>
-    <%= f.text_field :name %>
+    <%= f.text_field :name %> 
   </p>
   <p> 
     <%= f.label :article_ids, "Articles" %><br>
-    <%= collection_select(:article, :article_ids, Article.all, :id, :title, {}, {:multiple => true}) %>
+    <%= f.select :article_ids, options_for_select(Article.all.map{|a| [a.title, a.id]}), {}, {:multiple => true} %>
+    
   </p>
   <p> 
     <%= f.label :user_ids, "Users" %><br>
-    <%= collection_select(:user, :user_ids, User.all, :id, :name, {}, {:multiple => true}) %>
+    <%= f.select :user_ids, options_for_select(User.all.map{|t| [t.name, t.id]}), {}, {:multiple => true} %>
   </p>
   <p>
     <%= f.submit %>

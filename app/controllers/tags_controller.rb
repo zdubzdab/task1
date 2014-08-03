@@ -26,7 +26,8 @@ class TagsController < ApplicationController
 
   def update
     @tag = Tag.find(params[:id])
- 
+    p '---------------------------------------------'
+    p tag_params
     if @tag.update(tag_params)
       redirect_to tags_path
     else
@@ -43,7 +44,7 @@ class TagsController < ApplicationController
 
 private
   def tag_params
-    params.require(:tag).permit(:name, :id)
+    params.require(:tag).permit(:name, :id, article_ids: [])
   end
 
 end

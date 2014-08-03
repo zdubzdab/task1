@@ -11,4 +11,8 @@ class User < ActiveRecord::Base
                     message: "правильний формат emaila: xxx@xxx.xxx" } ,
                     uniqueness: true
 
-end  
+  # def to_s
+  #   self.name
+  # end
+
+end

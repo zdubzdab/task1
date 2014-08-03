@@ -14,7 +14,7 @@
   <% @tags.each do |tag| %>
     <tr> 
       <td><%= tag.name %></td>
-      <td><%= tag.articles.try(&:name) %></td>
+      <td><%= tag.articles.map(&:title).join(', ') %></td>
       <td><%= link_to 'Show', tag_path(tag) %></td>
       <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
       <td><%= link_to 'Destroy', tag_path(tag),
