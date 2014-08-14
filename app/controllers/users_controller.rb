@@ -41,6 +41,7 @@ class UsersController < ApplicationController
    def email
     @user = User.find(params[:id])
     UserMailer.welcome_email(@user).deliver
+    redirect_to users_path
   end
 
   def destroy
