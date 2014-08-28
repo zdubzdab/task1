@@ -1,0 +1,23 @@
+<%= form_for @user, remote: true do |f| %>
+<br>
+<p class="show_text">
+  <strong >Name:</strong>
+  <%= @user.name %>
+</p>
+ 
+<p class="show_text">
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<span class="remove_text">ok</span> 
+<% end %>
+  <script>
+    $(document).ready(function(){
+      $(".remove_text").click(function(){
+        $(".show_text").animate({ opacity: "hide" }, "slow");
+        $(".remove_text").animate({ opacity: "hide" }, "slow");
+      });
+    });
+  </script>
+

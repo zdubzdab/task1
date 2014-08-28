@@ -14,4 +14,16 @@
 //= require jquery_ujs
 //= require twitter/bootstrap
 //= require turbolinks
-//= require_tree .
+
+/ users index /
+$(document).ready(function(){
+
+    /delete/
+    $('.delete_user').bind('ajax:success', function() {
+        $(this).closest('tr').fadeOut();
+    });
+    /edit/
+    $('.edit_user').bind('ajax:success', function() {
+        $(this).closest('tr').fadeOut();
+    });
+});

@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  
   def new
     @user = User.new
   end
@@ -12,7 +13,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.html { redirect_to users_url, notice: 'User was successfully created.' }
-        format.js  
+        format.js
       else
         format.html { render action: 'new' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
@@ -22,6 +23,10 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
+     respond_to do |format|
+        format.html { user_path }
+        format.js
+      end
   end
 
   def edit
@@ -30,12 +35,16 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to user_path
-    else
-      render 'edit'
+    respond_to do |format|
+      if @user.update(user_params)
+        format.html { redirect_to user_path }
+        format.js
+      else
+        format.html { render action: 'edit'}
+      end
     end
   end
+
 
   def email
     @user = User.find(params[:id])
@@ -46,8 +55,12 @@ class UsersController < ApplicationController
   def destroy
     @user = User.find(params[:id])
     @user.destroy
-    redirect_to users_path
+      respond_to do |format|
+        format.html { redirect_to users_url }
+        format.js  { render :nothing => true }
+    end
   end
+
 
 private
   def user_params

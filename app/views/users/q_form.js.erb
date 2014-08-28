@@ -1,0 +1,20 @@
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#user_signup_form").validate({
+            rules: {
+                "user[name]":{
+                    required: true,
+                    minlength: 6
+                },
+
+            },
+            messages: {
+                "user[name]":{
+                    required: "Required",
+                    minlength: "Min Length is 3 characters"
+                },
+
+            }
+        });
+    });
+</script>
