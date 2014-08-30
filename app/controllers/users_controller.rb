@@ -15,7 +15,7 @@ class UsersController < ApplicationController
         format.html { redirect_to users_url, notice: 'User was successfully created.' }
         format.js
       else
-        format.html { render action: 'new' }
+        format.html { render partial: 'form' }
         format.json { render json: @user.errors, status: :unprocessable_entity }
       end
     end
