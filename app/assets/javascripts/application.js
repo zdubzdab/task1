@@ -23,7 +23,7 @@ $(document).ready(function(){
         $(this).closest('tr').fadeOut();
     });
     /edit/
-    $('.edit_user').bind('ajax:success', function() {
+    $('body').on('ajax:success', '.edit_user', function() {
         $(this).closest('tr').fadeOut();
     });
 });
