@@ -27,4 +27,8 @@ $(document).ready(function(){
     $('body').on('ajax:success', '.edit_user', function() {
         $(this).closest('tr').fadeOut();
     });
+      $(".aaa").click(function() {
+ confirm("Are you sure?")
+
+      });
 });
