@@ -8,6 +8,6 @@
     <td><%= link_to 'Edit', edit_user_path(user), class: 'edit_user', remote: true %></td>
     <td><%= link_to 'Destroy', user_path(user),
                     method: :delete, data: { confirm: 'Are you sure?' }, remote: :true %></td>
-    <td><%= link_to 'Send email',{:controller => "users", :action => "email", :id => user.id }, :method => "get", remote: :true,  data: { confirm: 'You really want to send email?' } %></td>
+    <td><%= link_to 'Send email', {controller: "users", action: "email", id: user.id }, method: "get", remote: true,  data: { confirm: 'You really want to send email?' } %></td>
   <% end %>
 </tr>

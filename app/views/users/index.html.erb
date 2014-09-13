@@ -1,5 +1,6 @@
 <div class="span2">
   <%= link_to 'New user', new_user_path, id: "new_link", remote: true  %>
+  <div id="new_user"></div>     
 </div>
 
 <div class="span10">
@@ -16,16 +17,16 @@
       <th>Email</th>
     </tr>
   <% @users.each do |user| %>
-    <tr> 
+    <tr data-user_id="<%= user.id %>"> 
       <td><%= user.name %></td>
       <td><%= user.email %> </td>
       <td><%= article_from_user(user.articles.to_a) %></td>
       <td><%= user.tags.map(&:name).join(', ') %></td>
       <td><%= link_to 'Show', user_path(user), remote: true %></td>
-      <td><%= link_to 'Edit', edit_user_path(user), remote: true, :class=>'edit_user' %></td>
-      <td><%= link_to 'Destroy', user_path(user), :confirm => 'Are you sure?', :method => :delete, :remote=>true, :class=>'delete_user' %></td>
-      <td><%= link_to 'Send email',{:controller => "users", :action => "email", :id => user.id }, :method => "get", remote: :true,  data: { confirm: 'You really want to send email?' } %></td>
-       <td><span class="aaa">aaa</span></td>
+      <td><%= link_to 'Edit', edit_user_path(user), remote: true, class: 'edit_user' %></td>
+      <td><%= link_to 'Destroy', user_path(user), confirm: 'Are you sure?', method: :delete, remote: true, class: 'delete_user' %></td>
+      <td><%= link_to 'Send email',{controller: "users", action: "email", id: user.id }, method: "get", remote: true,  data: { confirm: 'You really want to send email?' } %></td>
+       <td><span class="button_submit">aaa</span></td>
     </tr>
   <% end %>
   </table>

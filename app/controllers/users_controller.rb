@@ -12,19 +12,19 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        format.html { redirect_to users_url, notice: 'User was successfully created.' }
+        
         format.js
       else
-        format.html { render partial: 'form' }
-        format.json { render json: @user.errors, status: :unprocessable_entity }
-      end
+        format.html { render partial: "form" }
+        format.js
+        end
     end
   end
 
   def show
     @user = User.find(params[:id])
      respond_to do |format|
-        format.html { user_path }
+        
         format.js
       end
   end

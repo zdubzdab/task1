@@ -1,26 +1,25 @@
-JQuery(function($){
-  $(".aaa").click(function() {
- confirm("Are you sure?")
+$( document ).ready(function() {
+  // Handler for .ready() called.
+  $("body").on('click', ".save", function() {
+    var values = $(this).closest(".new_user").serialize();
+ $.ajax({
+      url: "users",
+      type: "post",
+      data: values,
+      success: function(data){
+        $('#new_task').remove();
+        $('#new_link').show();
+        
+      },
+      error: function(){
+        $('#new_task').hide().after('.new_user');
+        
+      },
+    });
+    return false;
+    });
+});
 
-      });
-
-    
-  });
 
 
 
-  JQuery(function($){
-  $(".button_submit").click(function() {
-  var current_user_tr = $(this).parents("tr")[0];
-    if(confirm("Are you sure?")){
-      $.ajax({
-        url: "/users/" + $(current_user_tr).attr("data-user_id"),
-        type:"POST",
-        data: { _metod: "DELETE" },
-        success: function() {
-          $(currrent_user_tr).fadeOut(200);
-        }
-      });
-    };
-    
-  });

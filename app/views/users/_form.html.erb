@@ -1,32 +1,30 @@
- <%= form_for @user, remote: true do |f| %>
-  <% if @user.errors.any? %> 
-  <div id="error_explanation">
-    <h2><%= pluralize(@user.errors.count, "error") %> prohibited
-      this user from being saved:</h2>
-    <ul>
-    <% @user.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
+<%= form_for @user, remote: true do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited
+        this user from being saved:</h2>
+      <ul>
+        <% @user.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
   <% end %>
 
   <div id="new_task">
-  <p>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-  </p>
- 
-  <p>
-    <%= f.label :email %>
-    <%= f.text_field :email %>
-  </p>
-  
-  <p>
-    <%= f.submit %>
-  </p>
-
+    <p>
+      <%= f.label :name %>
+      <%= f.text_field :name %>
+    </p>
+    <p>
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+    </p>
+    <p>
+      <%= link_to "save",  "#", class: "save"%>
+    </p>
+    </div>
 <% end %>
-</div>
+  
 
 

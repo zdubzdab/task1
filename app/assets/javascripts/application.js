@@ -20,15 +20,13 @@
 $(document).ready(function(){
 
     /delete/
-    $('.delete_user').bind('ajax:success', function() {
+    $('body').on('ajax:success', '.delete_user', function() {
         $(this).closest('tr').fadeOut();
     });
     /edit/
     $('body').on('ajax:success', '.edit_user', function() {
         $(this).closest('tr').fadeOut();
     });
-      $(".aaa").click(function() {
- confirm("Are you sure?")
+    /new/
 
-      });
 });
