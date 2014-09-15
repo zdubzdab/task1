@@ -9,12 +9,8 @@ $( document ).ready(function() {
       success: function(data){
         $('#new_task').remove();
         $('#new_link').show();
-        
-      },
-      error: function(){
-        $('#new_task').hide().after('.new_user');
-        
-      },
+        $(".new_user").append(data);
+      }
     });
     return false;
     });

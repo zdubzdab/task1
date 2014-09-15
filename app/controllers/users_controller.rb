@@ -12,8 +12,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     respond_to do |format|
       if @user.save
-        
         format.js
+        format.html 
       else
         format.html { render partial: "form" }
         format.js
@@ -24,7 +24,7 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
      respond_to do |format|
-        
+        format.html { redirect_to user_path }
         format.js
       end
   end
