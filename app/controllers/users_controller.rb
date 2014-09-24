@@ -13,7 +13,7 @@ class UsersController < ApplicationController
     respond_to do |format|
       if @user.save
         format.js
-        format.html 
+        format.html { redirect_to users_path }
       else
         format.html { render partial: "form" }
         format.js
