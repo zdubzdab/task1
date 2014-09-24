@@ -5,7 +5,7 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
   has_many :articles
   has_many :tags, through: :articles
-  validates :name, presence: true,
+  validates :username, presence: true,
                     length: { minimum: 3 },
                     format: { with: /\A[a-z]+\z/i,
                     message: " allows only letters" },
