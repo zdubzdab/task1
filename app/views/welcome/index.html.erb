@@ -1,12 +1,11 @@
 <div class="center hero-unit">
-<h2>Welcome to "TASK"</h2>
-<h4>To sign in push this button</h4>
-<button class="button"><%= link_to "BUTTON", new_user_path %></button>
 
 <% if user_signed_in? %>
-    <span>Здравствуйте, <%= current_user.email %></span>
-    <%= link_to 'Выйти', destroy_user_session_path, :method => :delete %>
+    <h3>Hello,  <span><i><%= current_user.username %></i></span>,   Welcome to "TASK"</h3>
+    <h4><button class="button", id="one"><%= link_to 'Home',  user_session_path %></button>
+    <span><button class="button", id="two"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></button></span></h4>
 <% else %>
-    <%= link_to 'Войти', new_user_session_path %> или <%= link_to 'Зарегистрироваться', new_user_registration_path %>
+    <h3>Welcome to "TASK"</h3>
+    <button class="button", id="log_in"><%= link_to 'Log in', new_user_session_path %></button><button class="button", id="sign_in"><%= link_to 'Sign up', new_user_registration_path %></button>
 <% end %>
 </div>

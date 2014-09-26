@@ -16,17 +16,7 @@
 //= require turbolinks
 //= require_tree .
 
-/ users index /
-$(document).ready(function(){
 
-    /delete/
-    $('body').on('ajax:success', '.delete_user', function() {
-        $(this).closest('tr').fadeOut();
-    });
-    /edit/
-    $('body').on('ajax:success', '.edit_user', function() {
-        $(this).closest('tr').fadeOut();
-    });
-    /new/
+$(document).ready(function(){
 
 });

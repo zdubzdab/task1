@@ -1,0 +1,5 @@
+<h3><%= current_user.username %></h3>
+<div class="span2">
+  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %><br>
+  <%= link_to 'Change password', edit_user_password_path, :method => :get %>
+</div>

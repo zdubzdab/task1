@@ -1,4 +1,5 @@
  class ArticlesController < ApplicationController
+  before_filter :authenticate_user!, except => [:show, :index]
   def new
     @article = Article.new
   end
@@ -8,11 +9,14 @@
  
   def create
     @article = Article.new(article_params)
-
-    if @article.save
-      redirect_to articles_path
-    else
-      render 'new'
+    respond_to do |format|
+      if @article.save
+        format.js
+        format.html { redirect_to articles_path }
+      else
+        format.html { render partial: "form" }
+        format.js
+        end
     end
   end
  
@@ -24,13 +28,16 @@
     @article = Article.find(params[:id])
   end
 
+
   def update
     @article = Article.find(params[:id])
- 
-    if @article.update(article_params)
-      redirect_to articles_path
-    else
-      render 'edit'
+    respond_to do |format|
+      if @article.update(article_params)
+        format.html { redirect_to article_path }
+        format.js
+      else
+        format.html { render action: 'edit'}
+      end
     end
   end
 
