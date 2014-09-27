@@ -6,4 +6,5 @@ module UsersHelper
     end
     ar2.join(', ')
   end
+  
 end
