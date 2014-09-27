@@ -26,8 +26,6 @@ class TagsController < ApplicationController
 
   def update
     @tag = Tag.find(params[:id])
-    p '---------------------------------------------'
-    p tag_params
     if @tag.update(tag_params)
       redirect_to tags_path
     else
