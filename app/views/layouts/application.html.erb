@@ -12,8 +12,14 @@
   <body>
     <%= render 'layouts/header' %>
     <div class="container-fluid">
-      <div class="row-fluid"> 
-        <%= yield %>
+      <div class="row-fluid">
+        <div id="flash">
+          <p class="notice"><%= notice %></p>
+          <p class="alert"><%= alert %></p>
+        </div>
+        <div> 
+          <%= yield %>
+        </div>
         <%= render 'layouts/footer' %>
       </div>
     </div>

@@ -1,8 +1,11 @@
- class ArticlesController < ApplicationController
+class ArticlesController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
 
   def new
     @article = Article.new
+    @article.user = current_user
   end
+
   def index 
     @articles = Article.all 
   end
@@ -28,12 +31,16 @@
     @article = Article.find(params[:id])
   end
 
-
   def update
     @article = Article.find(params[:id])
+
     respond_to do |format|
-      if @article.update(article_params)
-        format.html { redirect_to article_path }
+      if @article.user != current_user 
+        format.html { redirect_to @article, notice: 'That article is not yours to edit' } 
+        format.json { render json: @article.errors, status: :unprocessable_entity }
+
+      elsif @article.update(article_params)
+        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.js
       else
         format.html { render action: 'edit'}

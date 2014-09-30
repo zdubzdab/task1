@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
+  before_filter :authenticate_user!, :except => [:index, :show]
 
-  
   def new
     @user = User.new
   end
@@ -42,6 +42,7 @@ class UsersController < ApplicationController
         format.js
       else
         format.html { render action: 'edit'}
+        format.js
       end
     end
   end
