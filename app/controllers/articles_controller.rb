@@ -50,9 +50,21 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-    @article.destroy
- 
-    redirect_to articles_path
+
+    if @article.user != current_user 
+      flash[:notice] = 'That article is not yours to destory'  
+      respond_to do |format| 
+        format.html { redirect_to :back } 
+        format.js { render :nothing => true } 
+        format.json { head :no_content } 
+      end 
+    else @article.destroy  
+      respond_to do |format| 
+        format.html { redirect_to articles_url }
+        format.js  { render :nothing => true } 
+        format.json { head :no_content } 
+      end 
+    end 
   end
 
 private

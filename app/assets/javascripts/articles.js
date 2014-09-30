@@ -20,4 +20,9 @@ $( document ).ready(function() {
   $('body').on('ajax:success', '.edit_article', function() {
         $(this).closest('tr').fadeOut();
     });
+/delete/
+  $('body').on('ajax:success', '.delete_article', function() {
+      $(this).closest('tr').fadeOut();
+  });
+
 });

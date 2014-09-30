@@ -47,7 +47,6 @@ class UsersController < ApplicationController
     end
   end
 
-
   def email
     @user = User.find(params[:id])
     UserMailer.welcome_email(@user).deliver
