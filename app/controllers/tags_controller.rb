@@ -55,7 +55,7 @@ class TagsController < ApplicationController
         format.json { head :no_content }
       end
     else
-      @post.destroy
+      @tag.destroy
 
       respond_to do |format| 
         format.html { redirect_to tags_url }
@@ -66,7 +66,7 @@ class TagsController < ApplicationController
 
 private
   def tag_params
-    params.require(:tag).permit(:name, :id, article_ids: [])
+    params.require(:tag).permit(:name, :id, article_ids: [], user_ids: [])
   end
 
 end

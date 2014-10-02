@@ -1,6 +1,5 @@
 Task1::Application.routes.draw do
  
-
   devise_for :users
   get "persons/profile"
   resources :articles

@@ -1,9 +1,14 @@
+<div class="span2">
+  <%= link_to 'New tag', tags_path, id: "new_link" %><br> 
+  <%= link_to 'New article', articles_path, id: "new_linka" %><br><br>
+  <%= link_to 'Edit your profile',  edit_user_registration_path  %><br>
+  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %><br>
+  <%= link_to 'Destroy account', root_path, confirm: 'Are you sure?',  class: 'delete_use' %>
+</div>
+
 <h3>name: <%= current_user.username %></h3>
 <h3>email: <%= current_user.email %></h3>
-<div class="span2">
-  <%= link_to 'Edit',  edit_user_registration_path  %><br>
-  <%= link_to 'Sign out', destroy_user_session_path, :method => :delete %>
-</div>
+
 
 
 

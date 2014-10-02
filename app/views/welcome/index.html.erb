@@ -7,6 +7,8 @@
 
 <% else %>
     <h3>Welcome to "TASK"</h3>
-    <button class="button", id="log_in"><%= link_to 'Log in', new_user_session_path %></button><button class="button", id="sign_in"><%= link_to 'Sign up', new_user_registration_path %></button>
+    <button class="button", id="log_in"><%= link_to 'Log in', new_user_session_path %></button>
+    <button class="button", id="sign_in"><%= link_to 'Sign up', new_user_registration_path %></button>
+    <button class="button_big", id="go_in"><%= link_to 'Go in without registration', users_path %></button>
 <% end %>
 </div>
