@@ -1,1 +1,9 @@
-$("#link_to_create_a").hide().after('<%= j render("form") %>');
+<% if @article.user != current_user %>
+  alert('This article is not yours to edit it');
+<% else %>
+  $("#link_to_create_a").hide().after('<%= j render("form") %>');
+
+  $('body').on('ajax:success', '.edit_article', function() {
+        $(this).closest('tr').fadeOut();
+  });
+<% end %>

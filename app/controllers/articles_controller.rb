@@ -38,12 +38,13 @@ class ArticlesController < ApplicationController
       if @article.user != current_user 
         format.html { redirect_to @article, notice: 'That article is not yours to edit' } 
         format.json { render json: @article.errors, status: :unprocessable_entity }
-
+        format.js
       elsif @article.update(article_params)
         format.html { redirect_to @article, notice: 'Article was successfully updated.' }
         format.js
       else
         format.html { render action: 'edit'}
+        format.js
       end
     end
   end
@@ -52,10 +53,10 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.user != current_user 
-      flash[:notice] = 'That article is not yours to destory'  
+      flash[:notice] = 'This article is not yours to destory it'  
       respond_to do |format| 
         format.html { redirect_to :back } 
-        format.js { render :nothing => true } 
+        format.js { render js: "alert('This article is not yours to destory it');" } 
         format.json { head :no_content } 
       end 
     else @article.destroy  
