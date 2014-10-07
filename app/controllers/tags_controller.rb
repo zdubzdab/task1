@@ -3,7 +3,7 @@ class TagsController < ApplicationController
 
   def new
     @tag = Tag.new
-    @tag.user = current_user
+    @tag.users.build(current_user)
   end
 
   def index
@@ -32,7 +32,7 @@ class TagsController < ApplicationController
     @tag = Tag.find(params[:id])
 
     respond_to do |format|
-      if @tag.user != current_user
+      if @tag.users.include?(current_user)
         format.html { redirect_to @tag, notice: 'That tag is not yours to edit' }
         format.json { render json: @tag.errors, status: :unprocessable_entity }
       elsif @tag.update(tag_params)
