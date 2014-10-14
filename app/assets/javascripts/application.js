@@ -15,5 +15,10 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require_tree .
-
+$( document ).ready(function() {
+  // Handler for .ready() called.
+    $(".sign_out").click(function() {
+    alert("You are not authorized to access this page.")
+  });
+});
 

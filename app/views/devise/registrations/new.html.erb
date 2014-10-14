@@ -13,7 +13,8 @@
     <%= f.password_field :password, autocomplete: "off" %></div>
 
   <div><%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %></div>
+    
+  <%= f.password_field :password_confirmation, autocomplete: "off" %></div><%= f.collection_select :role, User::ROLES, :to_s, :humanize %>
 
   <div><%= f.submit "Sign up" %></div>
 <% end %>

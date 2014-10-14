@@ -1,4 +1,11 @@
 class User < ActiveRecord::Base
+
+  ROLES = %w[admin]
+
+  def is?( requested_role )
+    self.role == requested_role.to_s
+  end
+
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
@@ -15,8 +22,5 @@ class User < ActiveRecord::Base
                     message: "правильний формат emaila: xxx@xxx.xxx" } ,
                     uniqueness: true
 
-  # def to_s
-  #   self.name
-  # end
 
 end

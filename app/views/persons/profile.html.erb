@@ -10,7 +10,7 @@
 <h3>name: <%= current_user.username %></h3>
 <h3>email: <%= current_user.email %></h3>
 <% else %>
-<p>You haven't account but you can to create it: <%= link_to 'Sign up', new_user_registration_path %></p>
+<p>If you want to see your home page you have to <%= link_to 'Sign up', new_user_registration_path %> or <%= link_to 'Log in', new_user_session_path %>.</p>
 <% end %>
 
 

@@ -17,9 +17,6 @@ $( document ).ready(function() {
     });
   
 
-/delete/
-  $('body').on('ajax:success', '.delete_article', function() {
-      $(this).closest('tr').fadeOut();
-  });
+
 
 });

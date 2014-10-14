@@ -31,16 +31,11 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
   end
 
-  def update
+    def update
     @article = Article.find(params[:id])
-
     respond_to do |format|
-      if @article.user != current_user 
-        format.html { redirect_to @article, notice: 'That article is not yours to edit' } 
-        format.json { render json: @article.errors, status: :unprocessable_entity }
-        format.js
-      elsif @article.update(article_params)
-        format.html { redirect_to @article, notice: 'Article was successfully updated.' }
+      if @article.update(article_params)
+        format.html { redirect_to article_path }
         format.js
       else
         format.html { render action: 'edit'}
@@ -62,11 +57,12 @@ class ArticlesController < ApplicationController
     else @article.destroy  
       respond_to do |format| 
         format.html { redirect_to articles_url }
-        format.js  { render :nothing => true } 
+        format.js  { } 
         format.json { head :no_content } 
       end 
     end 
   end
+
 
 private
   def article_params
