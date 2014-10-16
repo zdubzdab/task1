@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   ROLES = %w[admin]
 
   def is?( requested_role )
@@ -10,6 +9,7 @@ class User < ActiveRecord::Base
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
+
   has_many :articles
   has_many :tags, through: :articles
   validates :username, presence: true,
@@ -23,4 +23,6 @@ class User < ActiveRecord::Base
                     uniqueness: true
 
 
+has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200>"}, :default_url => "/assets/m.jpg"
+validates_attachment_file_name :avatar, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
 end

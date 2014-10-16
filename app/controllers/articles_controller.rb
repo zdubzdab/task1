@@ -48,7 +48,6 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:id])
 
     if @article.user != current_user 
-      flash[:notice] = 'This article is not yours to destory it'  
       respond_to do |format| 
         format.html { redirect_to :back } 
         format.js { render js: "alert('This article is not yours to destory it');" } 
