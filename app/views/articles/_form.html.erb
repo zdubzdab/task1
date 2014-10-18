@@ -23,7 +23,7 @@
     </p>
     <p>
       <%= f.label :user_id, "User" %><br>
-      <%= f.select :user_id, User.all.map{|u| [u.username, u.id]} %> 
+      <%= f.select :user_id, User.all.map{|u| [u.name, u.id]} %> 
     </p>
 
     <p>

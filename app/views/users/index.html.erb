@@ -20,7 +20,7 @@
   <% @users.each do |user| %>
     <tr data-user_id="<%= user.id %>"> 
       <td><%= image_tag user.avatar.url(:display) %></td>
-      <td><%= user.username %></td>
+      <td><%= user.name %></td>
       <td><%= user.email %> </td>
       <td><%= article_from_user(user.articles.to_a) %></td>
       <td><%= user.tags.map(&:name).join(', ') %></td>

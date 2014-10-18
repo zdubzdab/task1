@@ -3,15 +3,11 @@ source 'https://rubygems.org'
 
 gem 'rails', '4.0.2'
 
-group :development, :test do
-  gem 'sqlite3', '1.3.8'
-  gem 'rspec-rails', '2.13.1'
-end
-
-group :test do
-  gem 'selenium-webdriver', '2.35.1'
-  gem 'capybara', '2.1.0'
-end
+gem "rspec-rails"
+gem "factory_girl_rails"
+gem "capybara"
+gem "guard-rspec"
+gem "sqlite3"
 
 #See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby

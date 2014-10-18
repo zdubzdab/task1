@@ -22,7 +22,7 @@
   </p>
   <p> 
     <%= f.label :user_ids, "Users" %><br>
-    <%= f.select :user_ids, options_for_select(User.all.map{|t| [t.username, t.id]}), {}, {:multiple => true} %>
+    <%= f.select :user_ids, options_for_select(User.all.map{|t| [t.name, t.id]}), {}, {:multiple => true} %>
   </p>
   <p>
     <%= f.submit %>
