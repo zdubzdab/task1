@@ -1,0 +1,9 @@
+<% if @article.user != current_user %>
+  alert('This article is not yours to edit it');
+<% else %>
+
+
+  $('body').on('ajax:success', '.delete_article', function() {
+        $(this).closest('tr').fadeOut();
+  });
+<% end %>
