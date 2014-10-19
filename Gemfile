@@ -8,6 +8,9 @@ gem "factory_girl_rails"
 gem "capybara"
 gem "guard-rspec"
 gem "sqlite3"
+gem 'better_errors'
+gem 'binding_of_caller'#with better_errors
+gem 'will_paginate'#postorinkova_navihatsia
 
 #See https://github.com/sstephenson/execjs#readme for more supported runtimes
 gem 'therubyracer', platforms: :ruby
