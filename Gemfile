@@ -7,7 +7,6 @@ gem "rspec-rails"
 gem "factory_girl_rails"
 gem "capybara"
 gem "guard-rspec"
-gem "sqlite3"
 gem 'better_errors'
 gem 'binding_of_caller'#with better_errors
 gem 'will_paginate'#postorinkova_navihatsia
@@ -31,7 +30,13 @@ group :doc do
   gem 'sdoc', '0.3.20', require: false
 end
 
-group :production do
-  gem 'pg', '0.15.1'
-  gem 'rails_12factor', '0.0.2'
+group :production do#heroku
+  gem 'rails_12factor'
 end
+
+gem 'sqlite3', :group => [:development, :test]
+  group :production do
+    gem 'thin' 
+    gem 'pg' 
+  end
+

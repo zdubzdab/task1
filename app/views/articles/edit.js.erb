@@ -3,7 +3,7 @@
 <% else %>
   $("#link_to_create_a").hide().after('<%= j render("form") %>');
 
-  $('body').on('ajax:success', '.edit_article', function() {
+  $('body').on('ajax:success', '.editarticle', function() {
         $(this).closest('tr').fadeOut();
   });
 <% end %>
