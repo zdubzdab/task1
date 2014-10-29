@@ -18,12 +18,12 @@ gem "less-rails"
 gem "twitter-bootstrap-rails"
 gem 'devise'
 gem 'cancan'
-gem 'uglifier', '2.1.1'
-gem 'coffee-rails', '4.0.1'
-gem 'jquery-rails', '3.0.4'
-gem 'turbolinks', '1.1.1'
-gem 'jbuilder', '1.0.2'
-gem 'sprockets', '=2.12.1'
+gem 'uglifier'
+gem 'coffee-rails'
+gem 'jquery-rails'
+gem 'turbolinks'
+gem 'jbuilder'
+gem 'sprockets'
 gem 'paperclip'
 
 group :doc do
@@ -34,9 +34,13 @@ group :production do#heroku
   gem 'rails_12factor'
 end
 
-gem 'sqlite3', :group => [:development, :test]
-  group :production do
-    gem 'thin' 
-    gem 'pg' 
-  end
+  gem 'sqlite3', :group => [:development, :test]
+    group :production do
+      gem 'thin' 
+      gem 'pg' 
+    end
+
+  gem 'sprockets_better_errors'
+
+
 
