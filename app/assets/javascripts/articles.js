@@ -16,7 +16,21 @@ $( document ).ready(function() {
     return false;
     });
   
-
+/edit/
+  $("body").on('click', ".save_editarticle", function() {
+    var val = $(this).closest(".edit_article").serialize();
+ $.ajax({
+      url: "articles",
+      type: "post",
+      data: val,
+      success: function(data){
+        $('#articles_form').remove();
+        $('#link_to_create_a').show();
+        $("#new_article").append(data);
+      }
+    });
+    return false;
+    });
 
 
 });
