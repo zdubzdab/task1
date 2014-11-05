@@ -32,10 +32,10 @@ class ArticlesController < ApplicationController
   end
 
   def update
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:article][:id])
     respond_to do |format|
       if @article.update(article_params)
-        format.html { redirect_to article_path }
+        # format.html { redirect_to article_path }
         format.js
       else
         format.html { render action: 'edit'}

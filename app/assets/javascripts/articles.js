@@ -19,10 +19,10 @@ $( document ).ready(function() {
 /edit/
   $("body").on('click', ".save_editarticle", function() {
     var val = $(this).closest(".edit_article").serialize();
- $.ajax({
+    $.ajax({
       url: "articles",
       type: "post",
-      data: val,
+      data:  val,
       success: function(data){
         $('#articles_form').remove();
         $('#link_to_create_a').show();
