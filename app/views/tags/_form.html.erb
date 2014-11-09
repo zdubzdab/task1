@@ -18,7 +18,6 @@
   <p> 
     <%= f.label :article_ids, "Articles" %><br>
     <%= f.select :article_ids, options_for_select(Article.all.map{|a| [a.title, a.id]}), {}, {:multiple => true} %>
-    
   </p>
   <p> 
     <%= f.label :user_ids, "Users" %><br>
