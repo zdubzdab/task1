@@ -1,6 +1,12 @@
 @import "twitter/bootstrap/bootstrap";
 @import "twitter/bootstrap/responsive";
 
+
+
+.container-fluid {
+background: #ffffff !important;
+}
+body { background: #EBE0D6 !important;}
 /* header */
 
 #logo {
@@ -18,30 +24,33 @@
     text-decoration: none;
   }
 }
-.navbar navbar-inner {
+.navbar-inner {
   background: black;
 }
 
   /* footer */
 
 footer {
-  margin-top: 50px;
-  margin-left: 80px;
-  padding-top: 5px;
-  border-top: 1px solid grayMediumLight;
-  color: grayLight;
-  text-align: left;
-  }
+    background: #7e7e7e;
+    color: #dbdbdb;
+    font-size: 11px;
+
+    .container {      
+        height: 50px;
+        padding: 10px 10px 10px 10px;
+position: relative;
+   bottom: 0; left: 0;
+    }
+}
   .zdub {
-  font-weight: bold;
-  font-size: 1.0em;
-  color: #FF8000
-  
+    font-weight: bold;
+    font-size: 1.4em;
+    color: #FF8000;
   }
   .zdab {
-  font-weight: bold;
-  font-size: 0.9em;
-  color: orange;
+    font-weight: bold;
+    font-size: 0.8em;
+    color: orange;
   }
 
   /* typography */
@@ -51,6 +60,21 @@ footer {
 
  /* sign out */
  .sign_out {
- color: #08c; 
- cursor: pointer; 
+   color: #08c; 
+   cursor: pointer; 
  }
+ .notice {
+   text-align: center;
+   font-weight: bold;
+   color: #0071B5;
+   background: #fcf8e3;
+ }
+ .center hero-unit{
+ padding: 200px;
+ }
+
+
+ .navbar {
+ margin-bottom: 0px !important;
+}
+

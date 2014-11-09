@@ -9,7 +9,7 @@ $( document ).ready(function() {
       data: values,
       success: function(data){
         $('#articles_form').remove();
-        $('#link_to_create_a').show();
+        $('#error_explanation').remove();
         $("#new_article").append(data);
       }
     });
@@ -25,12 +25,11 @@ $( document ).ready(function() {
       data:  val,
       success: function(data){
         $('#articles_form').remove();
-        $('#link_to_create_a').show();
+        $('#error_explanation').remove();
         $("#new_article").append(data);
       }
     });
     return false;
     });
-
 
 });

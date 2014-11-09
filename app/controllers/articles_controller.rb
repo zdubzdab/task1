@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def index 
-    @articles = Article.paginate(:page => params[:page], :per_page => 8).order("created_at DESC")
+    @articles = Article.paginate(:page => params[:page], :per_page => 15).order("created_at DESC")
   end
  
   def create
@@ -15,7 +15,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.save
         format.js
-        format.html { redirect_to articles_path }
+        #format.html { redirect_to articles_path }
       else
         format.html { render partial: "form" }
         format.js
@@ -35,10 +35,10 @@ class ArticlesController < ApplicationController
     @article = Article.find(params[:article][:id])
     respond_to do |format|
       if @article.update(article_params)
-        # format.html { redirect_to article_path }
+        #format.html { redirect_to article_path }
         format.js
       else
-        format.html { render action: 'edit'}
+        format.html { render partial: "editform"}
         format.js
       end
     end
@@ -53,6 +53,7 @@ class ArticlesController < ApplicationController
         format.js { render js: "alert('This article is not yours to destory it');" } 
         format.json { head :no_content } 
       end 
+      
     else @article.destroy  
       respond_to do |format| 
         format.html { redirect_to articles_url }

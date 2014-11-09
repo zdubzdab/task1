@@ -1,6 +1,7 @@
 <% if user_signed_in? %>
-  <div class="span2">
-      <%= link_to 'New article', new_article_path, id: "link_to_create_a", remote: true %>
+  <div class="span2">  
+    <%= link_to 'New article', new_article_path, id: "link_to_create_a", remote: true %>
+
   </div>
   <div class="span10">
     <h3>Listing Articles</h3>
@@ -11,7 +12,7 @@
           <th>User</th>
           <th>Articles tags</th>
           <th>Show</th>
-          <th>Edit</th>       
+          <th>Edit</th>
           <th>Destroy</th>
         </tr>
         <% @articles.each do |article| %> 
@@ -27,7 +28,8 @@
       <% end %>
       </table>
   </div>
-  <div class="new_article"></div>
+    <div class="edit_article"></div>
+    <div class="new_article"></div>
     <div class="pagination pagination-centered">
       <ul>
         <li class="active"><span><%= will_paginate @articles %></span></li>
@@ -63,7 +65,7 @@
       <% end %>
       </table>
   </div>
-  <div class="new_article"></div>
+    <div class="edit_article"></div>
     <div class="new_article"></div>
     <div class="pagination pagination-centered">
       <ul>

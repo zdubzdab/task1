@@ -6,7 +6,7 @@ class TagsController < ApplicationController
   end
 
   def index
-     @tags = Tag.paginate(:page => params[:page], :per_page => 9).order("created_at DESC")
+     @tags = Tag.paginate(:page => params[:page], :per_page => 15).order("created_at DESC")
   end
  
   def create

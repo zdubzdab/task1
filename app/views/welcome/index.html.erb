@@ -1,14 +1,33 @@
-<div class="center hero-unit">
-
+<div class="center hero-unit"><br><br>
 <% if user_signed_in? %>  
-    <h3>Hello,  <span><i><%= current_user.name %></i></span>,   Welcome to "TASK"</h3>
+    <h3 class="welcome">Hello,  <span><i><%= current_user.name %></i></span>,   Welcome to "TASK"</h3>
     <h4><button class="button", id="one"><%= link_to 'Home',  user_session_path %></button>
     <span><button class="button", id="two"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></button></span></h4>    
 
 <% else %>
-    <h3>Welcome to "TASK"</h3>
+    <h3 class="welcome">Welcome to "TASK"</h3>
     <button class="button", id="log_in"><%= link_to 'Log in', new_user_session_path %></button>
-    <button class="button", id="sign_in"><%= link_to 'Sign up', new_user_registration_path %></button>
+    <button class="button", id="sign_up"><%= link_to 'Sign up', new_user_registration_path %></button>
     <button class="button_big", id="go_in"><%= link_to 'Go in without registration', users_path %></button>
+    <br><br><br><br>
 <% end %>
-</div>
+</div>      
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+<div class="span3 offset2"></div>
+
+
+
