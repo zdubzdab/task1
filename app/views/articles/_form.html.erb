@@ -14,16 +14,16 @@
   <div id="articles_form">
     <p>
       <%= f.label :title %>
-      <%= f.text_field :title %>
+      <%= f.text_field :title, class: "text_field" %>
     </p>
     
     <p>
       <%= f.label :text %>
-      <%= f.text_area :text %>
+      <%= f.text_area :text, class: "text_field" %>
     </p>
     <p>
       <%= f.label :user_id, "User" %>
-      <%= f.select :user_id, User.all.map{|u| [u.name, u.id]} %> 
+      <%= f.select :user_id, User.all.map{|u| [u.name, u.id]}, class: "select"%> 
     </p>
 
     <p>
