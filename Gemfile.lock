@@ -75,6 +75,8 @@ GEM
       factory_girl (~> 4.5.0)
       railties (>= 3.0.0)
     ffi (1.9.6)
+    figaro (1.0.0)
+      thor (~> 0.14)
     formatador (0.2.5)
     guard (2.6.1)
       formatador (>= 0.2.4)
@@ -243,6 +245,7 @@ DEPENDENCIES
   coffee-rails
   devise
   factory_girl_rails
+  figaro
   guard-rspec
   jbuilder
   jquery-rails
