@@ -28,17 +28,8 @@ Task1::Application.configure do
   config.assets.debug = true
 
   config.assets.raise_production_errors = true#To enable sprockets_better_errors
-  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.smtp_settings = { 
-  address: 'smtp.gmail.com',
-  port: '587',
-  domain: 'gmail.com',
-  authentication: 'plain',
-  enable_starttls_auto: true,
-  user_name: ENV['GMAIL_USERNAME_DEV'],
-  password: ENV['GMAIL_PASSWORD_DEV']
-}
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
 end
