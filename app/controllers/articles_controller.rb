@@ -36,7 +36,7 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.update(article_params)
         #format.html { redirect_to article_path }
-        format.js
+        format.js{}
       else
         format.html { render partial: "editform"}
 
