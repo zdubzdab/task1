@@ -15,7 +15,6 @@
   <div><%= f.label :password_confirmation %>
     
   <%= f.password_field :password_confirmation, autocomplete: "off" %></div><br>
-  <%= f.collection_select :role, User::ROLES, :to_s, :humanize %><br><br>
 
   <div><%= f.label :avatar, "Avatar:" %></div>
   <div><%= f.file_field :avatar %></div><br>

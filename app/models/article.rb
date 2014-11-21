@@ -8,4 +8,4 @@ class Article < ActiveRecord::Base
   def to_s
     self.title
   end
-end  
+end

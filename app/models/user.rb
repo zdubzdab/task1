@@ -1,9 +1,4 @@
 class User < ActiveRecord::Base
-  ROLES = %w[admin]
-
-  def is?( requested_role )
-    self.role == requested_role.to_s
-  end
 
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable

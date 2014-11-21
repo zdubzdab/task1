@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
     # Catch all CanCan errors and alert the user of the exception
   rescue_from CanCan::AccessDenied do | exception |
-    redirect_to new_user_registration_path, alert: exception.message
+    render js: "alert('This article is not yours');"
   end
 
 end
