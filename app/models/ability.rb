@@ -3,7 +3,7 @@ class Ability
 
   def initialize(user)
     user ||= User.new # guest user (not logged in)
-      can   :read , User
+      can   :manage , User
       can   :manage , Article, :user_id => user.id
       can   :manage , Tag
   end
