@@ -28,7 +28,7 @@
 <!--       <td><%= link_to 'Edit', edit_user_path(user), remote: true, class: 'edit_user' %></td>
       <td><%= link_to 'Destroy', user_path(user), data: { confirm: 'Are you sure?' }, method: :delete, remote: true, class: 'delete_user' %></td> --> 
       <td><% if user_signed_in? %>
-            <%= link_to 'Send eemail', { controller: "users", action: "email", id: user.id }, method: "get", remote: true, data: { confirm: 'You really want to send email?' } %>
+            <%= link_to 'Send eekmail', { controller: "users", action: "email", id: user.id }, method: "get", remote: true, data: { confirm: 'You really want to send email?' } %>
           <% else %>
             <p class="sign_out">Send email</p>
           <% end %></td>
