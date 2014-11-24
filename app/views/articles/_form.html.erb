@@ -13,6 +13,7 @@
 
   <div id="articles_form">
     <p>
+      <%= f.hidden_field :id, value: @article.id %>
       <%= f.label :title %>
       <%= f.text_field :title, class: "text_field" %>
     </p>

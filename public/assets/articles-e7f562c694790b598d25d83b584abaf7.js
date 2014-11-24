@@ -1,0 +1,1 @@
+$(document).ready(function(){$(".sign_out").click(function(){alert("You are not authorized to access this page.")}),$("body").on("click",".save_article",function(){var e=$(this).closest("form").serialize();return $.ajax({url:"articles",type:"post",data:e,success:function(e){$("#articles_form").remove(),$("#error_explanation").remove(),$("#new_article").append(e)}}),!1})});

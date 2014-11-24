@@ -5,13 +5,13 @@ $( document ).ready(function() {
     alert("You are not authorized to access this page.")
   });
 
-/new/
+/new-edit-universal/
   $("body").on('click', ".save_article", function() {
-    var values = $(this).closest(".new_article").serialize();
+    var variable_new = $(this).closest("form").serialize();
  $.ajax({
       url: "articles",
       type: "post",
-      data: values,
+      data: variable_new,
       success: function(data){
         $('#articles_form').remove();
         $('#error_explanation').remove();
@@ -21,21 +21,4 @@ $( document ).ready(function() {
     return false;
     });
   
-/edit/
-  $("body").on('click', ".save_editarticle", function() {
-    var val = $(this).closest(".edit_article").serialize();
-    $.ajax({
-      url: "articles",
-      type: "post",
-      data:  val,
-      success: function(data){
-        $('#articles_form').remove();
-        $('#error_explanation').remove();
-        $("#new_article").append(data);
-      }
-    });
-    return false;
-    });
-
-
 });

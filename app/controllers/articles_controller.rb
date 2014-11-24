@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
       else
         format.html { render partial: "form" }
         format.js
-        end
+      end
     end
   end
  
@@ -37,24 +37,22 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.update(article_params)
         #format.html { redirect_to article_path }
-        format.js{}
+        format.js {}
       else
-        format.html { render partial: "editform"}
-
+        format.html { render partial: "form"}
+        format.js
       end
     end
   end
 
   def destroy
     @article = Article.find(params[:id])
-
-   @article.destroy  
-      respond_to do |format| 
-        format.html { redirect_to articles_url }
-        format.js  { } 
-        format.json { head :no_content } 
-      
-    end 
+      @article.destroy  
+        respond_to do |format| 
+          format.html { redirect_to articles_url }
+          format.js  { } 
+          format.json { head :no_content } 
+      end 
   end
 
 
