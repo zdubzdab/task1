@@ -15,7 +15,7 @@ class User < ActiveRecord::Base
   validates :email, presence: true,
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i,
                     message: "правильний формат emaila: xxx@xxx.xxx" } ,
-                    uniqueness: true
+                    
 
 
 has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200>"}, :default_url => "/assets/m.jpg"
