@@ -36,5 +36,5 @@ Task1::Application.configure do
   
   
   #by device configure actionmailer (http://railsapps.github.io/rails-send-email.html#configure)
-  config.action_mailer.default_url_options = { :host => 'example.com' }
+  config.action_mailer.default_url_options = { :host => 'www.example.com' }
 end
