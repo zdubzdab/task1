@@ -34,4 +34,7 @@ Task1::Application.configure do
   # Print deprecation notices to the stderr.
   config.active_support.deprecation = :stderr
   
+  
+  #by device configure actionmailer (http://railsapps.github.io/rails-send-email.html#configure)
+  config.action_mailer.default_url_options = { :host => 'example.com' }
 end
