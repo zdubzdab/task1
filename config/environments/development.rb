@@ -38,9 +38,9 @@ Task1::Application.configure do
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { 
-  address: 'smtp.gmail.com',
+  address: 'smtp.sendgrid.net',
   port: '587',
-  domain: 'gmail.com',
+  domain: 'heroku.com',
   authentication: 'plain',
   enable_starttls_auto: true,
   user_name: ENV['GMAIL_USERNAME_DEV'],

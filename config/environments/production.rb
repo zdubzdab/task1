@@ -86,7 +86,7 @@ Task1::Application.configure do
   config.action_mailer.default :charset => "utf-8"
 
 
-  config.action_mailer.default_url_options = { host: 'http://zuzu.herokuapp.com' }
+  config.action_mailer.default_url_options = { host: 'example.com' }
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { 

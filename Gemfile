@@ -27,6 +27,7 @@ gem 'jbuilder'
 gem 'sprockets'
 gem 'paperclip'
 gem "figaro"# protect private information
+gem 'sendgrid-ruby'
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
