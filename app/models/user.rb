@@ -1,14 +1,4 @@
 class User < ActiveRecord::Base
-  ROLES = %w[admin]
-
-  def is?( requested_role )
-    self.role == requested_role.to_s
-  end
-
-  # Include default devise modules. Others available are:
-  # :confirmable, :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
 
   has_many :articles
   has_many :tags, through: :articles
@@ -25,4 +15,19 @@ class User < ActiveRecord::Base
 
 has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200>"}, :default_url => "/assets/m.jpg"
 validates_attachment_file_name :avatar, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
+
+  # Include default devise modules. Others available are:
+  # :confirmable, :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable
+         
+
+  # Overridden to notify users with password changes
+  def update_with_password(params, *options)
+    if super
+      # TODO schedule this in the background
+      UserMailer.password_changed(self.id).deliver
+    end
+  end
+
 end
