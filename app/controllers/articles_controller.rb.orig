@@ -19,8 +19,13 @@ class ArticlesController < ApplicationController
         #format.html { redirect_to articles_path }
       else
         format.html { render partial: "form" }
-        #format.js
+<<<<<<< HEAD
+        format.js
       end
+=======
+        #format.js
+        end
+>>>>>>> main
     end
   end
  
@@ -39,8 +44,13 @@ class ArticlesController < ApplicationController
         #format.html { redirect_to article_path }
         format.js {}
       else
+<<<<<<< HEAD
         format.html { render partial: "form"}
+        format.js
+=======
+        format.html { render partial: "editform"}
         #format.js
+>>>>>>> main
       end
     end
   end

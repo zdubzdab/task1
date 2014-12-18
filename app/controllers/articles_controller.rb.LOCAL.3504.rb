@@ -19,7 +19,7 @@ class ArticlesController < ApplicationController
         #format.html { redirect_to articles_path }
       else
         format.html { render partial: "form" }
-        #format.js
+        format.js
       end
     end
   end
@@ -40,7 +40,7 @@ class ArticlesController < ApplicationController
         format.js {}
       else
         format.html { render partial: "form"}
-        #format.js
+        format.js
       end
     end
   end

@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show]
-  load_and_authorize_resource except: :create
 
   def new
     @article = Article.new
@@ -8,7 +7,7 @@ class ArticlesController < ApplicationController
   end
 
   def index 
-    @articles = Article.paginate(:page => params[:page], :per_page => 16).order("created_at DESC")
+    @articles = Article.paginate(:page => params[:page], :per_page => 15).order("created_at DESC")
   end
  
   def create
@@ -20,7 +19,7 @@ class ArticlesController < ApplicationController
       else
         format.html { render partial: "form" }
         #format.js
-      end
+        end
     end
   end
  
@@ -37,9 +36,9 @@ class ArticlesController < ApplicationController
     respond_to do |format|
       if @article.update(article_params)
         #format.html { redirect_to article_path }
-        format.js {}
+        format.js
       else
-        format.html { render partial: "form"}
+        format.html { render partial: "editform"}
         #format.js
       end
     end
@@ -47,12 +46,21 @@ class ArticlesController < ApplicationController
 
   def destroy
     @article = Article.find(params[:id])
-      @article.destroy  
-        respond_to do |format| 
-          format.html { redirect_to articles_url }
-          format.js  { } 
-          format.json { head :no_content } 
+
+    if @article.user != current_user 
+      respond_to do |format| 
+        format.html { redirect_to :back } 
+        format.js { render js: "alert('This article is not yours to destory it');" } 
+        format.json { head :no_content } 
       end 
+      
+    else @article.destroy  
+      respond_to do |format| 
+        format.html { redirect_to articles_url }
+        format.js  { } 
+        format.json { head :no_content } 
+      end 
+    end 
   end
 
 

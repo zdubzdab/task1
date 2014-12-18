@@ -77,8 +77,21 @@ Task1::Application.configure do
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
   config.log_formatter = ::Logger::Formatter.new
+<<<<<<< HEAD
+  
+
+  #by device configure actionmailer (http://railsapps.github.io/rails-send-email.html#configure)
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.perform_deliveries = true
+  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.default :charset => "utf-8"
+
+
+  config.action_mailer.default_url_options = { host: 'example.com' }
+=======
 
   config.action_mailer.default_url_options = { host: 'www.example.com' }
+>>>>>>> main
 
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = { 
@@ -89,13 +102,9 @@ Task1::Application.configure do
   :password       => ENV['SENDGRID_PASSWORD'],
   :domain         => 'heroku.com',
   :enable_starttls_auto => true
-  }
-  :address        => 'smtp.sendgrid.net',
-  :port           => '587',
-  :authentication => :plain,
-  :user_name      => ENV['SENDGRID_USERNAME'],
-  :password       => ENV['SENDGRID_PASSWORD'],
-  :domain         => 'heroku.com',
-  :enable_starttls_auto => true
+<<<<<<< HEAD
 }
+=======
+  }
+>>>>>>> main
 end
