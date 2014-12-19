@@ -38,7 +38,7 @@ class ArticlesController < ApplicationController
         #format.html { redirect_to article_path }
         format.js
       else
-        format.html { render partial: "editform"}
+        format.html { render partial: "form"}
         #format.js
       end
     end
