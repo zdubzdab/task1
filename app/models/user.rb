@@ -1,6 +1,5 @@
 class User < ActiveRecord::Base
 
-
   has_many :articles
   has_many :tags, through: :articles
   validates :name, presence: true,
