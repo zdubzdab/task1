@@ -1,4 +1,4 @@
-<% if user_signed_in? %>
+
   <div class="span2">  
     <%= link_to 'New article', new_article_path, id: "link_to_create_a", remote: true %>
   </div>
@@ -35,38 +35,3 @@
       </ul>
     </div>
 
-<% else %>
-  <div class="span2">
-    <p class="sign_out">New article</p>
-  </div>
-  <div class="span10">
-    <h3>Listing Articles</h3>
-    <table id="article_table" class="table table-bordered table-condensed table-striped">
-        <tr>
-          <th>Title</th>
-          <th>Text</th>
-          <th>User</th>
-          <th>Articles tags</th>
-          <th>Show</th>
-          <th>Edit</th>       
-          <th>Destroy</th>
-        </tr>
-        <% @articles.each do |article| %> 
-        <tr>
-          <td><%= article.title %></td>
-          <td><%= article.text %></td> 
-          <td><%= article.user.try(&:username) %></td>
-          <td><%= tag_from_article (article.tags.to_a) %></td>
-          <td><%= link_to 'Show', article_path(article) %></td>
-          <td><p class="sign_out">Edit</p></td>
-          <td><p class="sign_out">Destroy</p></td>
-        </tr>
-      <% end %>
-      </table>
-  </div>
-    <div class="pagination pagination-centered">
-      <ul>
-        <li class="active"><span><%= will_paginate @articles %></span></li>
-      </ul>
-    </div>
-<% end %>
