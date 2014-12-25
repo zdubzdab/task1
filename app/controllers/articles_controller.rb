@@ -1,7 +1,7 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show], :message => "Unable to read this article."
   load_and_authorize_resource except: :create
-  
+
   def new
     @article = Article.new
     @article.user = current_user
@@ -39,7 +39,7 @@ class ArticlesController < ApplicationController
         #format.html { redirect_to article_path }
         format.js
       else
-        format.html { render partial: "editform"}
+        format.html { render partial: "form"}
         #format.js
       end
     end
