@@ -34,18 +34,12 @@ Task1::Application.configure do
   config.assets.debug = true
 
   config.assets.raise_production_errors = true#To enable sprockets_better_errors
-
+  
+#by device configure actionmailer (http://railsapps.github.io/rails-send-email.html#configure)
   config.action_mailer.default_url_options = { :host => 'localhost:3000' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.default :charset => "utf-8"
 
-  config.action_mailer.smtp_settings = {
-    address: 'smtp.sendgrid.net',
-    port: '587',
-    authentication: :plain,
-    user_name: 'zdubzdab',
-    password: 'y.128905'
-  }
 end
