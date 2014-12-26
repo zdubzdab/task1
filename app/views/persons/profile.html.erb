@@ -3,7 +3,7 @@
   <%= link_to 'New article', articles_path, id: "new_linka" %><br><br> -->
   <%= link_to 'Edit your profile',  edit_user_registration_path  %><br>
   <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
-  <%= link_to 'Destroy account', root_path, data: {confirm: 'Are you sure?'},  class: 'delete_use' %>
+  <%= link_to 'Destroy account', user_registration_path, data: {confirm: 'Are you sure?'}, method: :delete %>
 </div> 
 <div class="span10">
   <div class="ava"><%= image_tag (current_user.avatar.url(:display)) %></div> 
