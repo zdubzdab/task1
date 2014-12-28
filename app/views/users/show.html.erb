@@ -10,7 +10,7 @@
 </p>
 
 <div class="">
-  <p><%= @user.name %> has  articles</p>
+  <p><%= @user.name %> has <%= user.articles.map(&:name).join(', ') %> articles</p>
 </div>
 
 <%= link_to 'Edit', edit_user_path %>

@@ -4,11 +4,14 @@
   <%= link_to 'Edit your profile',  edit_user_registration_path  %><br>
   <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
   <%= link_to 'Destroy account', user_registration_path, data: {confirm: 'Are you sure?'}, method: :delete %>
+  <h5 class="my"> My tags: <%= current_user.tags.map(&:name).join(', ') %><br>
+                  My articles: <%= article_from_user(current_user.articles.to_a) %></h5><br>
 </div> 
-<div class="span10">
+<div class="span10" id="left_part">
   <div class="ava"><%= image_tag (current_user.avatar.url(:display)) %></div> 
-  <h3 class="name"> name: <%= current_user.name %></h3><br>
-  <h3 class="email"> email: <%= current_user.email %></h3>
+  <h3 class="name">My name: <%= current_user.name %><br>
+                   My email: <%= current_user.email %></h3><br><br>
+
   <br><br><br><br><br><br><br><br><br><br>
 </div> 
 
