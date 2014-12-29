@@ -1,17 +1,17 @@
 <div class="span2">
 <!--   <%= link_to 'New tag', tags_path, id: "new_link" %><br> 
   <%= link_to 'New article', articles_path, id: "new_linka" %><br><br> -->
-  <%= link_to 'Edit your profile',  edit_user_registration_path  %><br>
+  <%= link_to 'Edit my profile',  edit_user_registration_path  %><br>
   <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
   <%= link_to 'Destroy account', user_registration_path, data: {confirm: 'Are you sure?'}, method: :delete %>
-  <h5 class="my"> My tags: <%= current_user.tags.map(&:name).join(', ') %><br>
-                  My articles: <%= article_from_user(current_user.articles.to_a) %></h5><br>
 </div> 
 <div class="span10" id="left_part">
   <div class="ava"><%= image_tag (current_user.avatar.url(:display)) %></div> 
   <h3 class="name">My name: <%= current_user.name %><br>
                    My email: <%= current_user.email %></h3><br><br>
-
+  <p class="my">I have <%= current_user.articles.count %> articles and <%= current_user.tags.count %> tags.</p><br>
+  <p class="my"> My articles: <%= article_from_user(current_user.articles.to_a) %><br>
+                 My tags: <%= current_user.tags.map(&:name).join(', ') %></p>
   <br><br><br><br><br><br><br><br><br><br>
 </div> 
 

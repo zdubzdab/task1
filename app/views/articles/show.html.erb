@@ -1,12 +1,15 @@
 <p>
+  <strong>Owner:</strong>
+  <%= @article.user.try(&:name) %>
+</p><br>
+<p>
   <strong>Title:</strong>
   <%= @article.title %>
 </p>
-     
 <p>
   <strong>Text:</strong>
   <%= @article.text %>
-</p> 
+</p><br>
 
 <%= link_to 'Back', articles_path %>
 

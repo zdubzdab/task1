@@ -25,7 +25,7 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-
+    @articles = @user.articles.paginate(page: params[:page])
   end
 
   def edit
@@ -56,7 +56,6 @@ class UsersController < ApplicationController
         format.js  { render :nothing => true }
     end
   end
-
 
 private
   def user_params

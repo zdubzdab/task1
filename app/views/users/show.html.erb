@@ -9,9 +9,13 @@
   <%= @user.email %>
 </p>
 
-<div class="">
-  <p><%= @user.name %> has <%= user.articles.map(&:name).join(', ') %> articles</p>
-</div>
+  <% if @user.articles.any? %>
+      <h3>Articles (<%= @user.articles.count %>)</h3>
+      <ol class="microposts">
+        <%= render @articles %>
+      </ol>
+      <%= will_paginate @articles %>
+    <% end %>
 
 <%= link_to 'Edit', edit_user_path %>
 
