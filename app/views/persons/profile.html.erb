@@ -7,11 +7,13 @@
 </div> 
 <div class="span10" id="left_part">
   <div class="ava"><%= image_tag (current_user.avatar.url(:display)) %></div> 
-  <h3 class="name">My name: <%= current_user.name %><br>
-                   My email: <%= current_user.email %></h3><br><br>
-  <p class="my">I have <%= current_user.articles.count %> articles and <%= current_user.tags.count %> tags.</p><br>
+  <p class="name">My name: <%= current_user.name %><br>
+                  My email: <%= current_user.email %></p><br><br>
+  <p class="my">I have <%= current_user.articles.count %> articles and <%= current_user.tags.count %> tags.</p><br><br>
   <p class="my"> My articles: <%= article_from_user(current_user.articles.to_a) %><br>
                  My tags: <%= current_user.tags.map(&:name).join(', ') %></p>
+
+
   <br><br><br><br><br><br><br><br><br><br>
 </div> 
 

@@ -18,7 +18,7 @@
       <th>Send email</th>
     </tr>
   <% @users.each do |user| %>
-    <tr data-user_id="<%= user.id %>"> 
+    <tr> 
       <td><%= image_tag user.avatar.url(:display) %></td>
       <td><%= user.name %></td>
       <td><%= user.email %> </td>

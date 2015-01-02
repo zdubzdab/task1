@@ -1,22 +1,16 @@
 <p><%= image_tag @user.avatar.url(:display) %></p>
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
+<p class="name">User's name: <%= @user.name %><br>
+    User's email: <%= @user.email %></p><br>
+<p class="name">User has <%= @user.articles.count %> articles and <%= @user.tags.count %> tags</p>
+<% if @user.articles.any? %>
+  <p class="name">User's articles:<br>
+  <% @articles.each do |article| %>
+  <ol>
+    <b><%= article.title %></b>
+     (posted <%= time_ago_in_words(article.created_at) %> ago)
+    <%= link_to 'Show', article_path(article) %><br>
+  </ol>
+  <% end %>
+<% end %><br>
 </p>
- 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p>
-
-  <% if @user.articles.any? %>
-      <h3>Articles (<%= @user.articles.count %>)</h3>
-      <ol class="microposts">
-        <%= render @articles %>
-      </ol>
-      <%= will_paginate @articles %>
-    <% end %>
-
-<%= link_to 'Edit', edit_user_path %>
-
 <%= link_to 'Back', users_path %>
