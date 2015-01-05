@@ -28,9 +28,5 @@ class User < ActiveRecord::Base
       UserMailer.password_changed(self.id).deliver
     end
   end
-  
-  def confirmation_required?
-    false
-  end
 
 end
