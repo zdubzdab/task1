@@ -6,7 +6,9 @@ Task1::Application.routes.draw do
   resources :users
     match '/email',    to: 'users#email',    via:  [:post, :get]
 
-  resources :articles
+  resources :articles do
+    resources :comments
+  end
     match '/articles',    to: 'articles#update',    via:  [:patch]
 
   resources :tags

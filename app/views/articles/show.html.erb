@@ -11,5 +11,11 @@
   <%= @article.text %>
 </p><br>
 
+<h4>Comments</h4>
+<%= render @article.comments %>
+
+<h4>Add a comment:</h4>
+<%= render 'comments/form' %>
+
 <%= link_to 'Back', articles_path %>
 

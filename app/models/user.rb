@@ -1,7 +1,8 @@
 class User < ActiveRecord::Base
-
   has_many :articles
   has_many :tags, through: :articles
+  has_many :comments
+  
   validates :name, presence: true,
                     length: { minimum: 3 },
                     format: { with: /\A[a-z]+\z/i,
