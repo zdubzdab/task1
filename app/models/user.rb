@@ -22,4 +22,8 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
 
+  def confirmation_required?
+    false
+  end
+
 end
