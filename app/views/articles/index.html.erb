@@ -54,7 +54,7 @@
         <% @articles.each do |article| %>
         <tr>
           <td><%= article.title %></td>
-          <td><%= article.text %></td> 
+          <td><%= article.text %></td>
           <td><%= article.user.try(&:username) %></td>
           <td><%= tag_from_article (article.tags.to_a) %></td>
           <td><%= link_to 'Show', article_path(article) %></td>
