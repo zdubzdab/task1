@@ -21,12 +21,5 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # Overridden to notify users with password changes
-  def update_with_password(params, *options)
-    if super
-      # TODO schedule this in the background
-      UserMailer.password_changed(self.id).deliver
-    end
-  end
 
 end
