@@ -5,15 +5,24 @@
   <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
   <%= link_to 'Destroy account', user_registration_path, data: {confirm: 'Are you sure?'}, method: :delete %>
 </div> 
-<div class="span10" id="left_part">
+<div class="span10" id="right_part">
   <div class="ava"><%= image_tag (current_user.avatar.url(:display)) %></div> 
   <p class="name">My name: <%= current_user.name %><br>
                   My email: <%= current_user.email %></p><br><br>
-  <p class="my">I have <%= current_user.articles.count %> articles and <%= current_user.tags.count %> tags.</p><br><br>
-  <p class="my"> My articles: <%= article_from_user(current_user.articles.to_a) %><br>
-                 My tags: <%= current_user.tags.map(&:name).join(', ') %></p>
+  <p class="my">I have <%= current_user.articles.count %> articles and <%= current_user.tags.count %> tags.</p><br>
 
-
+<div class="my_articles">
+  <% if current_user.articles.any? %>
+  <h4>My articles:</h4>
+    <% @articles.each do |article| %>
+      <ol>
+        <b><%= article.title %></b>
+         (posted <%= time_ago_in_words(article.created_at) %> ago)
+        <%= link_to 'Show', article_path(article) %><br>
+      </ol>
+    <% end %>
+  <% end %><br>
+</div>
   <br><br><br><br><br><br><br><br><br><br>
 </div> 
 

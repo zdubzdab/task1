@@ -1,7 +1,6 @@
 class PersonsController < ApplicationController
   def profile
-@user = User.all
-
+    @articles = current_user.articles.paginate(:page => params[:page], :per_page => 3).order("created_at DESC")
   end
 
   private

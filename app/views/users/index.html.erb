@@ -1,21 +1,14 @@
-<div class="span2">
-<!--   <%= link_to 'New tag', tags_path, id: "new_link" %><br> 
-  <%= link_to 'New article', articles_path, id: "new_linka" %> -->
-</div>
-
 <div class="span10">
-  <h3>Listing Users</h3>  
-  <table id="table", class="table table-bordered table-condensed table-striped">
+  <h3 class="title">Listing Users</h3>  
+  <table id="user_table", class="table table-bordered table-condensed table-striped">
     <tr>
-      <th>Ava</th>
-      <th>Name</th>
-      <th>Email</th>
-      <th>Users articles</th>
-      <th>Users tags</th>
-      <th>Show</th>
-<!--       <th>Edit</th>
-      <th>Destroy</th> -->
-      <th>Send email</th>
+      <th style="width: 17%">Ava</th>
+      <th style="width: 8%">Name</th>
+      <th style="width: 10%">Email</th>
+      <th style="width: 11%">Users articles</th>
+      <th style="width: 11%">Users tags</th>
+      <th style="width: 8%">Show</th>
+      <th style="width: 10%">Send email</th>
     </tr>
   <% @users.each do |user| %>
     <tr> 
@@ -34,12 +27,12 @@
           <% end %></td>
     </tr>
   <% end %>
-  </table>
+  </table><br>
 </div>
 <div id="new_user"></div>
 <div id="error_message"></div>
 
-  <div class="pagination pagination-centered">
+  <div class="pagination pagination-centered" id="pagination_user">
     <ul>
       <li class="active"><span><%= will_paginate @users %></span></li>
     </ul>

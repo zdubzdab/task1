@@ -9,8 +9,15 @@
   .my {
     font-size: 16px;
   }
-  #left_part {
+  #right_part {
     border-left: 3px dashed #ccc;
     margin-left: 20px;
     padding-left: 20px;
   }
+  .my_articles {
+    font-size: 16px;
+    position:absolute;
+    left:38%;
+    top:10%;
+  }
+
