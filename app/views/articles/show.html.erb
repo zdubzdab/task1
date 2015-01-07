@@ -1,21 +1,29 @@
-<p>
-  <strong>Owner:</strong>
-  <%= @article.user.try(&:name) %> <%= link_to 'Show', user_path(@user) %><br>
-</p><br>
-<p>
-  <strong>Title:</strong>
-  <%= @article.title %>
-</p>
-<p>
-  <strong>Text:</strong>
-  <%= @article.text %>
-</p><br>
+<div class="span12" id="title_center">
+  <p>
+    <strong>Title:</strong>
+    <%= @article.title %>
+  </p>
+  <p>
+    <strong>Text:</strong><br>
+    <%= @article.text %>
+  </p>
+</div>
 
-<h4>Comments</h4>
-<%= render @article.comments %>
+<div class="span10" id="by">
+  <p>by <b><%= @article.user.try(&:name) %> </b><%= link_to 'Show', user_path(@user) %></p><br>
+</div>
 
-<h4>Add a comment:</h4>
-<%= render 'comments/form' %>
+<div class="span10">
+  <% if @article.comments.any? %>
+    <h4>Comments</h4>
+    <%= render @article.comments %>
+  <% end %>
+</div>
 
-<%= link_to 'Back', articles_path %>
-
+<div class="span10">
+  <h4>Add a comment:</h4>
+  <%= render 'comments/form' %>
+</div>
+<div class="span8">
+  <%= link_to 'Back', articles_path %>
+</div>

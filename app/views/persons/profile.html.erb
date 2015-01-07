@@ -15,13 +15,13 @@
   <% if current_user.articles.any? %>
   <h4>My articles:</h4>
     <% @articles.each do |article| %>
-      <ol>
+      <ol class="list">
         <b><%= article.title %></b>
          (posted <%= time_ago_in_words(article.created_at) %> ago)
-        <%= link_to 'Show', article_path(article) %><br>
+        <%= link_to 'Show', article_path(article) %>
       </ol>
     <% end %>
-  <% end %><br>
+  <% end %>
 </div>
   <br><br><br><br><br><br><br><br><br><br>
 </div> 

@@ -1,4 +1,11 @@
-<p>
-  <strong>Commenter:</strong>
-  <%= comment.commenter %>
-</p>
+<div class="span11" id="comment">
+  <div class="span4" id="author">
+    <p><%= comment.user.try(&:name) %></p>
+  </div>
+  <div class="span10" id="comment_text">
+    <p>
+      Commenter: <%= comment.commenter %>
+    </p>
+  </div>
+</div>
+

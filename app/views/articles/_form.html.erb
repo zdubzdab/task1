@@ -22,11 +22,10 @@
       <%= f.label :text %>
       <%= f.text_area :text, class: "text_field" %>
     </p>
-    <p>
+<!--     <p>
       <%= f.label :user_id, "User" %>
       <%= f.select :user_id, User.all.map{|u| [u.name, u.id]}, class: "select" %> 
-    </p>
-
+    </p> -->
     <p>
       <%= link_to "save",  "#", class: "save_article"%>
     </p>

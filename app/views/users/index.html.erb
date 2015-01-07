@@ -1,4 +1,3 @@
-
   <h3 class="title">Listing Users</h3>
   <table id="user_table", class="table table-bordered table-condensed table-striped">
     <tr>
@@ -17,20 +16,16 @@
       <td><%= user.email %> </td>
       <td><%= article_from_user(user.articles.to_a) %></td>
       <td><%= user.tags.map(&:name).join(', ') %></td>
-       <td><%= link_to 'Show', user_path(user) %></td>
-<!--       <td><%= link_to 'Edit', edit_user_path(user), remote: true, class: 'edit_user' %></td>
-      <td><%= link_to 'Destroy', user_path(user), data: { confirm: 'Are you sure?' }, method: :delete, remote: true, class: 'delete_user' %></td> --> 
+      <td><%= link_to 'Show', user_path(user) %></td>
       <td><% if user_signed_in? %>
             <%= link_to 'Send email', { controller: "users", action: "email", id: user.id }, method: "get", remote: true, data: { confirm: 'You really want to send email?' } %>
           <% else %>
             <p class="sign_out">Send email</p>
-          <% end %></td>
+          <% end %>
+      </td>
     </tr>
   <% end %>
   </table>
-
-<div id="new_user"></div>
-<div id="error_message"></div>
 
   <div class="pagination pagination-centered" id="pagination_user">
     <ul>
