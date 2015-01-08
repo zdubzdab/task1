@@ -10,15 +10,15 @@
 </div>
 
 <div class="span10" id="by">
-  <p>by <b><%= @article.user.try(&:name) %> </b><%= link_to 'Show', user_path(@user) %></p><br>
+  <p>by <b> <%= link_to (@article.user.try(&:name)), user_path(@user) %></b></p><br>
 </div>
 
 <div class="span10">
   <% if @article.comments.any? %>
     <h4>Comments</h4>
-    <%= render @article.comments %>
+    <%= render @article.comments %><br></div>
   <% end %>
-</div>
+
 
 <div class="span10">
   <h4>Add a comment:</h4>
