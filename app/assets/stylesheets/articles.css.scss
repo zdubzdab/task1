@@ -12,3 +12,15 @@
     #by {
     text-align: right;
     }
+/*розміри text_field і select у формі для створення і редагування article*/
+  .text_field {
+    width: 170px;
+  }
+  #article_user_id {
+    width: 170px;
+  }
+/* обмежений доступ для незареєстрованих users при створенні/редагуванні articles */
+   .sign_out {
+     color: #08c; 
+     cursor: pointer; 
+   }

@@ -16,14 +16,12 @@
 <div class="span10">
   <% if @article.comments.any? %>
     <h4>Comments</h4>
-    <%= render @article.comments %><br></div>
+    <%= render @article.comments %><br>
   <% end %>
-
-
-<div class="span10">
-  <h4>Add a comment:</h4>
-  <%= render 'comments/form' %>
 </div>
-<div class="span8">
+
+<div class="span10" id="add_comment">
+  <h4>Add a comment:</h4>
+  <%= render 'comments/form' %><br>
   <%= link_to 'Back', articles_path %>
 </div>

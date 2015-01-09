@@ -1,15 +1,15 @@
 <%= form_for @article, remote: true do |f| %>
   <% if @article.errors.any? %>
-  <div id="error_explanation">
-    <h4><%= pluralize(@article.errors.count, "error") %> prohibited
-      this article from being saved:</h4>
-    <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
+    <div id="error_explanation">
+      <h4><%= pluralize(@article.errors.count, "error") %> prohibited
+        this article from being saved:</h4>
+      <ul>
+      <% @article.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
 
   <div id="articles_form">
     <p>
@@ -17,7 +17,6 @@
       <%= f.label :title %><br>
       <%= f.text_field :title, class: "text_field" %>
     </p>
-    
     <p>
       <%= f.label :text %><br>
       <%= f.text_area :text, class: "text_field" %>
