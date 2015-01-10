@@ -1,5 +1,5 @@
 class TagsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show], :message => "Unable to read this article."
+  before_filter :authenticate_user!, :except => [:index, :show]
 
   def new
     @tag = Tag.new

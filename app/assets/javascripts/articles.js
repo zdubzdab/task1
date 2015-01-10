@@ -20,10 +20,5 @@ $( document ).ready(function() {
     });
     return false;
     });
-  
-/destroy article/
-    $('body').on('ajax:success', '.delete_article', function() {
-        $(this).closest('tr').fadeOut();
-  });
 
 });

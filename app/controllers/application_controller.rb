@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
 
     # Catch all CanCan errors and alert the user of the exception
   rescue_from CanCan::AccessDenied do | exception |
-    render js: "alert('This article is not yours');"
+    render js: "alert('This is not your property');"
   end
 
 end
