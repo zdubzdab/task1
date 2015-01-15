@@ -1,0 +1,32 @@
+/*show*/
+/* line 3, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/users.css.scss */
+.users_articles {
+  font-size: 16px;
+  position: absolute;
+  left: 35%;
+  top: 10%;
+}
+
+/*index*/
+/* line 10, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/users.css.scss */
+#user_table {
+  margin-left: 0%;
+  margin-top: 3%;
+}
+
+/* line 14, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/users.css.scss */
+#pagination_user {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  font-weight: bold;
+}
+
+/* line 20, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/users.css.scss */
+.title {
+  font-size: 22px;
+  position: relative;
+  left: 0%;
+  top: 0%;
+  margin-top: 3%;
+}
