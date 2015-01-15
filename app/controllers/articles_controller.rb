@@ -4,7 +4,6 @@ class ArticlesController < ApplicationController
 
   def new
     @article = Article.new
-    @article.user = current_user
   end
 
   def index
@@ -13,6 +12,7 @@ class ArticlesController < ApplicationController
  
   def create
     @article = Article.new(article_params)
+    @article.user = current_user
     respond_to do |format|
       if @article.save
         format.js
@@ -45,8 +45,8 @@ class ArticlesController < ApplicationController
         #format.html { redirect_to article_path }
         format.js
       else
-        format.html { render partial: "form"}
-        #format.js
+        format.html { render partial: "form" }
+        format.js
       end
     end
   end

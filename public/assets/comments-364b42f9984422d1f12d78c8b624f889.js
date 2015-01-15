@@ -1,0 +1,1 @@
+$(document).ready(function(){$("body").on("click",".button_create_comment",function(){var t=$(this).closest("form").serialize();return $.ajax({url:"/articles/34/comments",type:"post",data:t}),!1})});

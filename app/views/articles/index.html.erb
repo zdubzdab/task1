@@ -1,6 +1,9 @@
 <% if user_signed_in? %>
   <div class="span2">  
     <%= link_to 'New article', new_article_path, id: "link_to_create_a", remote: true %>
+    
+    <div class="new_article"></div>
+    <div class="edit_article"></div>
   </div>
   <div class="span10">
     <h3>Listing Articles</h3>
@@ -27,8 +30,7 @@
       <% end %>
       </table>
   </div>
-    <div class="edit_article"></div>
-    <div class="new_article"></div>
+    
     <div class="pagination pagination-centered">
       <ul>
         <li class="active"><span><%= will_paginate @articles %></span></li>
