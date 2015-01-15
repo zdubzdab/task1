@@ -9,7 +9,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.paginate(:page => params[:page], :per_page => 12).order("created_at DESC")
   end
- 
+
   def create
     @article = Article.new(article_params)
     @article.user = current_user
