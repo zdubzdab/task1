@@ -24,8 +24,5 @@ class User < ActiveRecord::Base
 
 
 
-  def confirmation_required?
-    false
-  end
 
 end
