@@ -1,9 +1,11 @@
 $( document ).ready(function() {
   // Handler for .ready() called.
 /обмежений доступ до articles (js)/
-  $(".sign_out").click(function() {
-    alert("You are not authorized to access this page.")
-  });
+
+
+  $(".sign_out").bind('ajax:success', function(event, data, status, xhr) {
+  alert("ghj");
+});
 
 /new-edit-universal/
   $("body").on('click', ".save_article", function() {

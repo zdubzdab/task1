@@ -8,6 +8,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.create(comment_params)
       respond_to do |format|
         if @comment.save
+          format.html { redirect_to comments_url }
           format.js
         else
           format.html {redirect_to article_path(@article)}
