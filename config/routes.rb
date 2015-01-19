@@ -7,7 +7,7 @@ Task1::Application.routes.draw do
     match '/email',    to: 'users#email',    via:  [:post, :get]
 
   resources :articles do
-    resources :comments
+    resources :comments, :only => [:create, :destroy]
   end
     match '/articles',    to: 'articles#update',    via:  [:patch]
 
