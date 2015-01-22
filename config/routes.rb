@@ -8,6 +8,7 @@ Task1::Application.routes.draw do
 
   resources :articles do
     resources :comments, :only => [:create, :destroy]
+    
   end
     match '/articles',    to: 'articles#update',    via:  [:patch]
 

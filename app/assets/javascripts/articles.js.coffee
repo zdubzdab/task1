@@ -14,3 +14,13 @@ $(document).ready ->
         $("#articles_form").remove()
         $("#error_explanation").remove()
         $("#new_article").append data
+
+# delete
+  $("body").on "click", ".delete_article", ->
+    $.ajax
+      url: "articles"
+      type: "post"
+      data: 
+        _method:"delete"
+
+

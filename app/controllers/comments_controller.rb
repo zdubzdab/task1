@@ -6,15 +6,11 @@ class CommentsController < ApplicationController
     @article = Article.find(params[:article_id])
     @user = current_user
     @comment = @article.comments.create(comment_params)
-      respond_to do |format|
-        if @comment.save
-          format.html { redirect_to comments_url }
-          format.js
-        else
-          format.html {redirect_to article_path(@article)}
-        end
+      if @comment.save
+         render :partial => "comments/comment", :locals => { :comment => @comment }, :layout => false, :status => :created
+      else
+          render :js => "alert('error saving comment');"
       end
-    
   end
 
   def destroy
@@ -22,7 +18,7 @@ class CommentsController < ApplicationController
     @comment = @article.comments.find(params[:id])
     @comment.destroy
       respond_to do |format|
-        format.html { redirect_to article_path(@article) }
+
         format.js  { }
       end
   end
