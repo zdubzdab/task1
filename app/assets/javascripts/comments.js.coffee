@@ -10,7 +10,5 @@ $(document).ready ->
       success: (data) ->
         $('.text_field_commenter').val("")
         $("#new_comment").append data
-  # destroy
 
-$("body").on "click", "#delete_comment", ->
-  $(this).closest("ol").fadeOut()
+

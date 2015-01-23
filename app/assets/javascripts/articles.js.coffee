@@ -1,4 +1,5 @@
 $(document).ready ->
+
 # обмежений доступ до articles (js)
   $(".sign_out").click ->
     alert "You are not authorized to access this page."
@@ -15,12 +16,6 @@ $(document).ready ->
         $("#error_explanation").remove()
         $("#new_article").append data
 
-# delete
-  $("body").on "click", ".delete_article", ->
-    $.ajax
-      url: "articles"
-      type: "post"
-      data: 
-        _method:"delete"
+
 
 

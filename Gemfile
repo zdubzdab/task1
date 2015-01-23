@@ -27,6 +27,7 @@ gem 'jbuilder'
 gem 'sprockets'
 gem 'paperclip'
 gem "figaro"# protect private information
+gem "jquery-turbolinks"#щоб нормально працював js(тільки заходиш на ст. js не працював треба було перезагружати)
 
 group :doc do
   gem 'sdoc', '0.3.20', require: false
