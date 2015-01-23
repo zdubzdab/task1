@@ -1,0 +1,1 @@
+(function(){$(document).ready(function(){return $("body").on("click",".button_create_comment",function(){var t;return t=$(this).closest("form").serialize(),$.ajax({url:$(this).attr("create_comment_path"),type:"post",data:t,success:function(t){return $(".text_field_commenter").val(""),$("#new_comment").append(t)}})})})}).call(this);

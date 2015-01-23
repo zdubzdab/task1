@@ -3,7 +3,6 @@
     <div class="span3" id="author">
       <p>
         <%= comment.user.try(&:name) %>
-      
         <%= link_to user_path(@user) do %>
              <i class="fa fa-user fa-2x" id="icon_user"></i>
            <% end %>
