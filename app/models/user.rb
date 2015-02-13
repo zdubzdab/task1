@@ -13,7 +13,7 @@ class User < ActiveRecord::Base
                     message: "правильний формат emaila: xxx@xxx.xxx" } ,
                     uniqueness: true
 
-  has_attached_file :avatar, :styles => { :large => "500x500>", :display => "200x200>"}, :default_url => "/assets/m.jpg"
+  has_attached_file :avatar, :styles => { :large => "400x400>", :display => "150x150#"}, :default_url => "/assets/m.jpg"
   validates_attachment_file_name :avatar, :matches => [/png\Z/, /jpe?g\Z/, /gif\Z/]
 
 
@@ -22,5 +22,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-
+def confirmation_required?
+    false
+  end
 end

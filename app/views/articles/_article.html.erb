@@ -1,5 +1,4 @@
 <tr>
-  <%= form_for article, remote: true do |f| %>
     <td><%= article.title %></td>
     <td><%= article.text %></td> 
     <td><%= article.user.try(&:name) %></td>
@@ -8,5 +7,4 @@
     <td><%= link_to 'Edit', edit_article_path(article)%></td>
     <td><%= link_to 'Destroy', article_path(article),
                         method: :delete, data: { confirm: 'Are you sure?' }%></td>
-  <% end %>
 </tr>
