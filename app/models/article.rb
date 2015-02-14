@@ -10,4 +10,9 @@ class Article < ActiveRecord::Base
   def to_s
     self.title
   end
+
+  def self.search(query)
+  where("title like ?", "%#{query}%") 
+end
+
 end

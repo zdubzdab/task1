@@ -6,6 +6,12 @@
     <div class="edit_article"></div>
   </div>
   <div class="span10">
+    <div class="search">
+      <%= form_tag(articles_path, :method => "get", class: "form-search") do %>
+        <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %>
+        <%= submit_tag "Search", :name => nil, class: "btn" %>
+      <% end %>
+    </div>
     <h3>Listing Articles</h3>
     <table id="article_table" class="table table-bordered table-condensed table-striped">
         <tr>
@@ -30,13 +36,12 @@
       <% end %>
       </table>
   </div>
-    
-    <div class="pagination pagination-centered">
+      <div class="pagination pagination-centered">
       <ul>
         <li class="active"><span><%= will_paginate @articles %></span></li>
       </ul>
     </div>
-
+    
 <% else %>
   <div class="span2">
     <p class="sign_out">New article</p>
