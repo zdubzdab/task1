@@ -1,8 +1,10 @@
 $(document).ready ->
 
 # обмежений доступ до articles (js)
-  $(".sign_out").click ->
-    alert "You are not authorized to access this page."
+$(document).ajaxError (e, xhr, settings) ->
+  if xhr.status == 401
+     alert "You are not authorized to access this page."
+  return
 
 # new-edit-universal
   $("body").on "click", ".save_article", ->
@@ -15,6 +17,8 @@ $(document).ready ->
         $("#articles_form").remove()
         $("#error_explanation").remove()
         $("#new_article").append data
+
+
 
 
 

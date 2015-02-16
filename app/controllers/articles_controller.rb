@@ -31,11 +31,11 @@ class ArticlesController < ApplicationController
   end
  
   def show
+    @article = Article.find(params[:id])
+
     if user_signed_in?
-      @article = Article.find(params[:id])
       @user = current_user
     else
-      @article = Article.find(params[:id])
       @user = @article.user
     end
   end

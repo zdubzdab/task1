@@ -10,7 +10,11 @@
 </div>
 
 <div class="span10" id="by">
-  <p>by <b> <%= link_to (@article.user.try(&:name)), user_path(@user) %></b></p><br>
+  <% if @article.user == nil %>
+    <p><b>Author of this article has been deleted</b></p><br>
+  <% else %>
+    <p>by <b> <%= link_to (@article.user.try(&:name)), user_path(@user) %></b></p><br>
+  <% end %>
 </div>
 
 <div class="span10">
@@ -25,7 +29,6 @@
 
 <div class="span10" id="add_comment">
   <h4>Add a comment:</h4>
-  <%= render 'comments/form' %>
-<br>
+  <%= render 'comments/form' %><br>
   <%= link_to 'Back', articles_path %>
 </div>

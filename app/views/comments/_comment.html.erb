@@ -2,10 +2,14 @@
   <div class="span11" id="comment">
     <div class="span3" id="author">
       <p>
-        <%= comment.user.try(&:name) %>
-        <%= link_to user_path(@user) do %>
-             <i class="fa fa-user fa-2x" id="icon_user"></i>
-           <% end %>
+      <% if @article.user == nil %>
+        Author has been deleted
+      <% else %>
+          <%= comment.user.try(&:name) %>
+          <%= link_to user_path(@user) do %>
+               <i class="fa fa-user fa-2x" id="icon_user"></i>
+             <% end %>
+        <% end %>
       </p>
     </div>
     <div class="span10" id="comment_text">
