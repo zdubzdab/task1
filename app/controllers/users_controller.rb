@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
-  load_and_authorize_resource
+  before_filter :authenticate_user!, :except => [:index, :show]#devise
+  load_and_authorize_resource #cancan
+  before_action :set_user, only: [:show, :edit, :update, :email, :destroy]
 
   def new
     @user = User.new
@@ -24,18 +25,14 @@ class UsersController < ApplicationController
   end
 
   def show
-    @user = User.find(params[:id])
     @articles = @user.articles.paginate(:page => params[:page], :per_page => 15).order("created_at DESC")
   end
 
   def edit
-    @user = User.find(params[:id])
   end
 
   def update
-    @user = User.find(params[:id])
-
-      if @user.update(user_params)
+    if @user.update(user_params)
       redirect_to users_path
     else
       render 'edit'
@@ -43,13 +40,11 @@ class UsersController < ApplicationController
   end
 
   def email
-    @user = User.find(params[:id])
     UserMailer.welcome_email(@user).deliver
     redirect_to users_path
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy
       respond_to do |format|
         format.html { redirect_to users_url }
@@ -58,6 +53,10 @@ class UsersController < ApplicationController
   end
 
 private
+  def set_user
+    @user = User.find(params[:id])
+  end
+
   def user_params
     params.require(:user).permit(:name, :email, :id, :password, :avatar, :username)
   end

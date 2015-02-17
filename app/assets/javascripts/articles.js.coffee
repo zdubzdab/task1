@@ -1,7 +1,7 @@
 $(document).ready ->
 
 # обмежений доступ до articles (js)
-$(document).ajaxError (e, xhr, settings) ->
+$(document).on 'ajax:error', (e, xhr, settings) ->
   if xhr.status == 401
      alert "You are not authorized to access this page."
   return

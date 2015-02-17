@@ -1,9 +1,9 @@
 class CommentsController < ApplicationController
-  before_filter :authenticate_user!
-  load_and_authorize_resource except: :create
+  before_filter :authenticate_user!#devise
+  load_and_authorize_resource except: :create#cancan
+  before_action :set_article_comment, only: [:create, :destroy]
 
   def create
-    @article = Article.find(params[:article_id])
     @user = current_user
     @comment = @article.comments.create(comment_params)
       if @comment.save
@@ -14,7 +14,6 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:article_id])
     @comment = @article.comments.find(params[:id])
     @comment.destroy
       respond_to do |format|
@@ -24,6 +23,10 @@ class CommentsController < ApplicationController
   end
 
   private
+    def set_article_comment
+      @article = Article.find(params[:article_id])
+    end
+
     def comment_params
       params.require(:comment).permit(:commenter, :body, :user_id, :article_id)
     end

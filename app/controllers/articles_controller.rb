@@ -1,6 +1,7 @@
 class ArticlesController < ApplicationController
   before_filter :authenticate_user!, :except => [:index, :show] #devise
   load_and_authorize_resource except: :create #cancan
+  before_action :set_article, only: [:show, :edit, :destroy]
 
   def new
     @article = Article.new
@@ -31,8 +32,6 @@ class ArticlesController < ApplicationController
   end
  
   def show
-    @article = Article.find(params[:id])
-
     if user_signed_in?
       @user = current_user
     else
@@ -41,7 +40,6 @@ class ArticlesController < ApplicationController
   end
 
   def edit
-    @article = Article.find(params[:id])
   end
 
   def update
@@ -58,7 +56,6 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article = Article.find(params[:id])
     @article.destroy
       respond_to do |format|
         format.html { redirect_to articles_url }
@@ -67,6 +64,10 @@ class ArticlesController < ApplicationController
   end
 
   private
+    def set_article
+      @article = Article.find(params[:id])
+    end
+
     def article_params
       params.require(:article).permit(:title, :text, :id, :user_id)
     end

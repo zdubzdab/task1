@@ -1,5 +1,6 @@
 class TagsController < ApplicationController
-  before_filter :authenticate_user!, :except => [:index, :show]
+  before_filter :authenticate_user!, :except => [:index, :show]#devise
+  before_action :set_tag, only: [:show, :edit, :update, :destroy]
 
   def new
     @tag = Tag.new
@@ -20,16 +21,12 @@ class TagsController < ApplicationController
   end
 
   def show
-    @tag = Tag.find(params[:id])
   end
 
   def edit
-    @tag = Tag.find(params[:id])
   end
 
   def update
-    @tag = Tag.find(params[:id])
-
     if @tag.update(tag_params)
       redirect_to tags_path
     else
@@ -38,7 +35,6 @@ class TagsController < ApplicationController
   end
 
   def destroy
-    @tag = Tag.find(params[:id])
     @tag.destroy
  
     redirect_to tags_path
@@ -46,6 +42,10 @@ class TagsController < ApplicationController
 
 
   private
+    def set_tag
+      @tag = Tag.find(params[:id])
+    end
+    
     def tag_params
       params.require(:tag).permit(:name, :id, article_ids: [])
     end
