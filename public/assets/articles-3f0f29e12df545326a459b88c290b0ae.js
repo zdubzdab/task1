@@ -1,0 +1,1 @@
+(function(){$(document).ready(function(){}),$(document).on("ajax:error",function(t,o){401===o.status&&alert("You are not authorized to access this page.")})}).call(this);
