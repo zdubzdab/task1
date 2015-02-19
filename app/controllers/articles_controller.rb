@@ -32,6 +32,10 @@ class ArticlesController < ApplicationController
   end
  
   def show
+    if @article.raitings.any?
+      @avg_raiting = @article.raitings.average(:value).round(2)
+    end
+
     if user_signed_in?
       @user = current_user
     else

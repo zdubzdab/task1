@@ -8,5 +8,6 @@ class Ability
       can   :manage , Article, :user_id => user.id
       can   :manage , Tag
       can   :manage , Comment, :user_id => user.id
+      can   :create , Raiting
   end
 end

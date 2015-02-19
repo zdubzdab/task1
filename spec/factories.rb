@@ -1,4 +1,9 @@
-FactoryGirl.define do  factory :comment do
+FactoryGirl.define do  factory :raiting do
+    value 1
+article nil
+user nil
+  end
+  factory :comment do
     commenter "MyText"
 article nil
 user nil

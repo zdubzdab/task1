@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
   has_many :articles
   has_many :tags, through: :articles
   has_many :comments
+  has_many :raitings
   
   validates :name, presence: true,
                     length: { minimum: 3 },
