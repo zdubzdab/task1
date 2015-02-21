@@ -1,3 +1,5 @@
+ready = ->
+
 $(document).ready ->
   
   # create
@@ -10,5 +12,8 @@ $(document).ready ->
       success: (data) ->
         $('.text_field_commenter').val("")
         $("#new_comment").append data
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
 
 
