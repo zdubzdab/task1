@@ -10,8 +10,14 @@
     margin: 5px;
   }
     #by {
-    text-align: right;
+      text-align: right;
     }
+    #rating {
+      text-align: left;
+      position:relative;
+      left:5%;
+    }
+
 /*розміри text_field і select у формі для створення і редагування article*/
   .text_field {
     width: 170px;

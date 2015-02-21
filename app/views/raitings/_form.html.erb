@@ -1,16 +1,9 @@
-<%= form_for([@article, @article.raitings.build]) do |f| %>
+<%= form_for([@article, @article.raitings.build], remote: true ) do |f| %>
   <div class="field">
     <div id="star-rating"></div>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "button_vote" %>
   </div>
 <% end %>
 
-
-<script>
-  $('#star-rating').raty({
-    path: '/assets/',
-    scoreName: 'raiting[value]'
-  });
-</script>

@@ -45,5 +45,9 @@ end
 
   gem 'sprockets_better_errors'
 
+  group :development do
+    gem 'web-console'
+  end
+
 
 

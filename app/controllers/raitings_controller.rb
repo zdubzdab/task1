@@ -6,11 +6,14 @@ class RaitingsController < ApplicationController
   def create
     @user = current_user
     @raiting = @article.raitings.create(raiting_params)
+    respond_to do |format|
       if @raiting.save
-         redirect_to article_path(@article)
+        format.js
+        format.html { redirect_to article_path(@article) }
       else
-          render :js => "alert('error saving raiting');"
+        render :js => "alert('error saving raiting');"
       end
+    end
   end
 
   private

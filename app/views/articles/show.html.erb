@@ -1,17 +1,19 @@
 <div class="span12" id="title_center">
-  <%= render 'raitings/raiting' %>
   <strong>Title:</strong>
   <%= @article.title %><br>
   <strong>Text:</strong>
   <%= @article.text %><br>
 </div>
 
-<div class="span10" id="by">
-  <% if @article.user == nil %>
-    <p><b>Author of this article has been deleted</b></p><br>
-  <% else %>
-    <p>by <b> <%= link_to (@article.user.try(&:name)), user_path(@user) %></b></p><br>
-  <% end %>
+<div class="span12" id="by">
+  <div class="span4" id="rating" data-score= <%= @avg_raiting %> ><b>Rate of this article  </b></div>
+  <div class="span6">
+    <% if @article.user == nil %>
+      <p><b>Author of this article has been deleted</b></p><br>
+    <% else %>
+       <p>by <b> <%= link_to (@article.user.try(&:name)), user_path(@user) %></b></p><br>
+    <% end %>
+  </div>
 </div>
 
 <div class="span10">

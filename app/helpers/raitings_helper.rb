@@ -1,4 +1,4 @@
-module RaitingHelper
+module RaitingsHelper
   def average_raiting (rate)
     if rate == nil
       rate = 0

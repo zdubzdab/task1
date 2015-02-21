@@ -1,11 +1,3 @@
-<div class="rating" data-score= <%= @avg_raiting %> ></div>
+<div class="span4" id="rating" data-score= <%= @avg_raiting %> ><b>Rate of this article  </b></div>
 
-<script>
-  $('.rating').raty({
-    path: '/assets/',
-    readOnly: true,
-    score: function() {
-          return $(this).attr("data-score");
-    }
-  });
-</script>
+
