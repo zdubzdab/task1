@@ -7,13 +7,16 @@ class ArticlesController < ApplicationController
     @article = Article.new
   end
 
+
   def index
-    @articles = Article.paginate(:page => params[:page], :per_page => 12).order("created_at DESC")
+    @articles = Article.paginate(:page => params[:page], :per_page => 15).order("created_at DESC")
 
     if params[:search]
-      @articles = Article.search(params[:search]).paginate(:page => params[:page], :per_page => 12).order("created_at DESC")
-    else
-      @articles = Article.paginate(:page => params[:page], :per_page => 12).order("created_at DESC")
+      @articles = Article.search(params[:search]).order("created_at DESC")
+
+      respond_to do |format|
+        format.js
+      end
     end
   end
 
@@ -26,7 +29,7 @@ class ArticlesController < ApplicationController
         #format.html { redirect_to articles_path }
       else
         format.html { render partial: "form" }
-        #format.js
+        # format.js
         end
     end
   end
@@ -54,7 +57,7 @@ class ArticlesController < ApplicationController
         format.js
       else
         format.html { render partial: "form" }
-        format.js
+        # format.js
       end
     end
   end
@@ -73,7 +76,7 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-      params.require(:article).permit(:title, :text, :id, :user_id)
+      params.require(:article).permit(:title, :text, :id)
     end
 
 end

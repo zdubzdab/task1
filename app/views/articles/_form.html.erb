@@ -1,3 +1,4 @@
+        <div class="h">
 <%= form_for @article, remote: true do |f| %>
   <% if @article.errors.any? %>
   <div id="error_explanation">
@@ -27,7 +28,8 @@
       <%= f.select :user_id, User.all.map{|u| [u.name, u.id]}, class: "select" %> 
     </p> -->
     <p>
-      <%= link_to "save",  "#", class: "save_article"%>
+      <%= link_to "save",  "#", class: "save_article" %>
     </p>
   </div>
 <% end %>
+</div>

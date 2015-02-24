@@ -1,19 +1,17 @@
   <div class="span2">  
     <%= link_to 'New article', new_article_path, id: "link_to_create_a", remote: true %>
-    <div class="new_article"></div>
-    <div class="edit_article"></div>
   </div>
 
   <div class="span10">
     <div class="search">
-      <%= form_tag(articles_path, :method => "get", class: "form-search") do %>
+      <%= form_tag(articles_path, :method => "get", class: "form-search", remote: true) do %>
         <%= text_field_tag :search, params[:search], placeholder: "Search Articles" %>
-        <%= submit_tag "Search", :name => nil, class: "btn" %>
+        <%= submit_tag "Search", :name => nil, class: "btn", remote: true %>
       <% end %>
     </div>
 
     <h3>Listing Articles</h3>
-     <%= render 'articles/articles' %>
+    <%= render 'articles/articles' %>
   </div>
   
   <div class="pagination pagination-centered">
