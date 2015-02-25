@@ -12,7 +12,8 @@ $( document ).ready(function() {
 /vote/
   $('#star-rating').raty({
     path: '/assets/',
-    scoreName: 'raiting[value]'
+    scoreName: 'raiting[value]',
+    hints       : ['bad', 'poor', 'regular', 'good', 'gorgeous']
   });
 
 

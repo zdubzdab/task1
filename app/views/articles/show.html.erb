@@ -16,6 +16,10 @@
   </div>
 </div>
 
+<div class="span12" id="create_raiting">
+  <p><%= render 'raitings/form' %></p>
+</div>
+
 <div class="span10">
   <% if @article.comments.any? %>
     <h4>Comments</h4>
@@ -29,6 +33,5 @@
 <div class="span10" id="add_comment">
   <h4>Add a comment:</h4>
   <%= render 'comments/form' %><br>
-  <%= render 'raitings/form' %><br>
   <%= link_to 'Back', articles_path %>
 </div>

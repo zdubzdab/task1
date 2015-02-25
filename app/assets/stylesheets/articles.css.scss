@@ -12,11 +12,7 @@
     #by {
       text-align: right;
     }
-    #rating {
-      text-align: left;
-      position:relative;
-      left:5%;
-    }
+
 
 /*розміри text_field і select у формі для створення і редагування article*/
   .text_field {
@@ -27,6 +23,7 @@
   }
 /* обмежений доступ для незареєстрованих users при створенні/редагуванні articles */
    .sign_out {
-     color: #08c; 
+      color: #08c; 
      cursor: pointer; 
    }
+
