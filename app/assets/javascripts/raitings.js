@@ -12,9 +12,9 @@ $( document ).ready(function() {
 /vote/
   $('#star-rating').raty({
     path: '/assets/',
+    readOnly: false,
     scoreName: 'raiting[value]',
     hints       : ['bad', 'poor', 'regular', 'good', 'gorgeous']
   });
 
-
-  });
+});

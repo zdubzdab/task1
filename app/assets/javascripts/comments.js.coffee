@@ -1,8 +1,7 @@
 ready = ->
 
+# create
 $(document).ready ->
-  
-  # create
   $("body").on "click", ".button_create_comment", ->
     variable_new = $(this).closest("form").serialize()
     $.ajax
@@ -12,6 +11,12 @@ $(document).ready ->
       success: (data) ->
         $('.text_field_commenter').val("")
         $("#new_comment").append data
+        
+# delete
+$(document).ready ->
+  $("body").on 'ajax:success', '#delete_comment', ->
+    $(this).closest('ol').fadeOut()
+
 
 $(document).ready(ready)
 $(document).on('page:load', ready)

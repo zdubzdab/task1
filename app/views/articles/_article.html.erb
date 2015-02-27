@@ -1,5 +1,5 @@
 <tr>
-  <td><%= article.title %></td>
+  <td><%= average_raiting (article.raitings.average(:value)) %></td>
   <td><%= article.title %></td>
   <td><%= article.text %></td>
   <td><%= article.user.try(&:name) %></td>
