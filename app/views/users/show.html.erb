@@ -1,9 +1,11 @@
-<div class="ava"><%= image_tag @user.avatar.url(:display) %></div>
-<p class="name">User's name: <%= @user.name %><br>
-    User's email: <%= @user.email %></p>
-<p class="name">User has <%= @user.articles.count %> articles and <%= @user.tags.count %> tags</p>
+<div class="span4" id="left_part">
+  <div id="ava"><%= image_tag @user.avatar.url(:display) %></div>
+  <p id="name">User's name: <%= @user.name %><br>
+      User's email: <%= @user.email %></p>
+  <p id="name">User has <%= @user.articles.count %> articles and <%= @user.tags.count %> tags</p>
+</div>
 
-<div class="users_articles">
+<div id="users_articles" class="span7">
   <% if @user.articles.any? %>
     <h4>User's articles:</h4>
     <% @articles.each do |article| %>
@@ -15,4 +17,8 @@
     <% end %>
   <% end %>
 </div><br>
-<%= link_to 'Back', users_path %>
+<div class="span12" id="link_back">
+  <p><%= link_to 'Back', users_path %></p>
+</div>
+
+

@@ -6,12 +6,12 @@
   <%= link_to 'Destroy account', user_registration_path, data: {confirm: 'Are you sure?'}, method: :delete %>
 </div> 
 <div class="span10" id="right_part">
-  <div class="ava"><%= image_tag (current_user.avatar.url(:large)) %></div> 
-  <p class="name">My name: <%= current_user.name %><br>
+  <div id="ava"><%= image_tag (current_user.avatar.url(:large)) %></div> 
+  <p id="name">My name: <%= current_user.name %><br>
                   My email: <%= current_user.email %></p><br><br>
-  <p class="my">I have <%= current_user.articles.count %> articles and <%= current_user.tags.count %> tags.</p><br>
+  <p id="my">I have <%= current_user.articles.count %> articles and <%= current_user.tags.count %> tags.</p><br>
 
-<div class="my_articles">
+<div id="my_articles">
   <% if current_user.articles.any? %>
   <h4>My articles:</h4>
     <% @articles.each do |article| %>

@@ -11,11 +11,6 @@ $(document).ready ->
       success: (data) ->
         $('.text_field_commenter').val("")
         $("#new_comment").append data
-        
-# delete
-$(document).ready ->
-  $("body").on 'ajax:success', '#delete_comment', ->
-    $(this).closest('ol').fadeOut()
 
 
 $(document).ready(ready)
