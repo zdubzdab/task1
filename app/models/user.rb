@@ -6,8 +6,6 @@ class User < ActiveRecord::Base
   
   validates :name, presence: true,
                     length: { minimum: 3 },
-                    format: { with: /\A[a-z]+\z/i,
-                    message: " allows only letters" },
                     uniqueness: true
   validates :email, presence: true,
                     format: { with: /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i,
@@ -23,7 +21,7 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable, :confirmable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  # def confirmation_required?
-  #     false
-  #   end
+  def confirmation_required?
+      false
+    end
 end

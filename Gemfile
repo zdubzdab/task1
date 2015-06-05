@@ -46,7 +46,7 @@ end
   gem 'sprockets_better_errors'
 
   group :development do
-    gem 'web-console'
+    gem 'web-console', '~> 2.0'
   end
 
 

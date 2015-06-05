@@ -8,6 +8,7 @@ class Article < ActiveRecord::Base
                     length: { minimum: 3, maximum: 25}, 
                     uniqueness: true
   validates :text, presence: true
+  
   def to_s
     self.title
   end
