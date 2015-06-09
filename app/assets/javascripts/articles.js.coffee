@@ -7,7 +7,7 @@ $(document).on 'ajax:error', (e, xhr, settings) ->
 
 ready = ->
 # new-edit-universal
-  $("body").on "click", ".save_article", ->
+  $(".save_article").click ->
     variable_new = $(this).closest("form").serialize()
     $.ajax
       url: "articles"

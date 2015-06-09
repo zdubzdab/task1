@@ -2,7 +2,7 @@ ready = ->
 
 # create
 $(document).ready ->
-  $("body").on "click", ".button_create_comment", ->
+  $(".button_create_comment").click ->
     variable_new = $(this).closest("form").serialize()
     $.ajax
       url: $(this).attr('create_comment_path')
