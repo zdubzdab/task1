@@ -19,17 +19,6 @@ $ ->
         $(".edit_article").append data
 
 
-  $(".delete_article").click ->
-    $.ajax
-      type: "POST"
-      url: $(this).attr('delete_article_path')
-      data: {"_method":"delete"}
-      success: (data) ->
-        $("#articles_form").remove()
-        $(this).closest('tr').hide()
-        alert "You are not authorized tis page."
-
-
 
 
 

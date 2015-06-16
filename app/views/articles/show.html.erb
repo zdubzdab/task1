@@ -20,19 +20,25 @@
   <p><%= render 'raitings/form' %></p>
 </div>
 
-<div class="span10">
-  <% if @article.comments.any? %>
-    <h4>Comments</h4>
-    <%= render @article.comments %><br>
-  <% end %>
-</div>
+<p>
+  <%= link_to "Comments", "#", id: "comments_link" %>
+</p>
 
-<div class="span10" id="new_comment">
-</div>
+<div class="span12" id="comment_section">
+  <div class="span10">
+    <% if @article.comments.any? %>
+      <h4>Comments</h4>
+      <%= render @article.comments %><br>
+    <% end %>
+  </div>
 
-<div class="span10" id="add_comment">
-  <h4>Add a comment:</h4>
-  <%= render 'comments/form' %><br>
-  <%= link_to 'Back', articles_path %>
-</div>
+  <div class="span10" id="new_comment">
+  </div>
 
+  <div class="span10" id="add_comment">
+    <h4>Add a comment:</h4>
+    <%= render 'comments/form' %><br>
+
+  </div>
+</div>
+<%= link_to 'Back', articles_path %>

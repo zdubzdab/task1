@@ -10,6 +10,8 @@ $ ->
         $('.text_field_commenter').val("")
         $("#new_comment").append data
 
+  $("#comments_link").click ->
+    $("#comment_section").toggle()
 
 
 
