@@ -18,6 +18,17 @@ $ ->
         $(".new_article").append data
         $(".edit_article").append data
 
+  $(".delete_article").click ->
+    current_article = $(this).parents("tr")
+    if confirm "Are you sure?"
+      $.ajax
+        type: "POST"
+        url: $(this).attr('delete_article_path')
+        data: {"_method":"delete"}
+        complete: (data) ->
+          current_article.fadeOut(200)
+
+
 
 
 
