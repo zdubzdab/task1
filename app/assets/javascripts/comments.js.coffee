@@ -1,7 +1,5 @@
-ready = ->
-
+$ ->
 # create
-$(document).ready ->
   $(".button_create_comment").click ->
     variable_new = $(this).closest("form").serialize()
     $.ajax
@@ -14,7 +12,5 @@ $(document).ready ->
 
 
 
-$(document).ready(ready)
-$(document).on('page:load', ready)
 
 

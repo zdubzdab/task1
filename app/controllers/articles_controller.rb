@@ -63,11 +63,16 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    @article.destroy
-      respond_to do |format|
-        format.html { redirect_to articles_url }
-        format.js  { }
+    if @article.destroy
+        render nothing: true
+    else
+        render :js => "alert('error saving comment');"
     end
+    # @article.destroy
+    #   respond_to do |format|
+    #     format.html { redirect_to articles_url }
+    #     format.js  { }
+    # end
   end
 
   private

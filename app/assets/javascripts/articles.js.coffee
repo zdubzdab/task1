@@ -1,13 +1,11 @@
-ready = ->
-
+$ ->
 # обмежений доступ до articles (js)
-$(document).on 'ajax:error', (e, xhr, settings) ->
-  if xhr.status == 401
-     alert "You are not authorized to access this page."
+  $(document).on 'ajax:error', (e, xhr, settings) ->
+    if xhr.status == 401
+       alert "You are not authorized to access this page."
 
-ready = ->
 # new-edit-universal
-  $(".save_article").click ->
+  $("body").on "click", ".save_article", ->
     variable_new = $(this).closest("form").serialize()
     $.ajax
       url: "articles"
@@ -21,8 +19,17 @@ ready = ->
         $(".edit_article").append data
 
 
-$(document).ready(ready)
-$(document).on('page:load', ready)
+  $(".delete_article").click ->
+    $.ajax
+      type: "POST"
+      url: $(this).attr('delete_article_path')
+      data: {"_method":"delete"}
+      success: (data) ->
+        $("#articles_form").remove()
+        $(this).closest('tr').hide()
+        alert "You are not authorized tis page."
+
+
 
 
 
