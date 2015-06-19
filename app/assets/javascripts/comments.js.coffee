@@ -1,4 +1,5 @@
-$ ->
+ready = ->
+
 # create
   $(".button_create_comment").click ->
     variable_new = $(this).closest("form").serialize()
@@ -12,6 +13,9 @@ $ ->
 
   $("#comments_link").click ->
     $("#comment_section").toggle()
+
+$(document).ready(ready)
+$(document).on('page:load', ready)
 
 
 

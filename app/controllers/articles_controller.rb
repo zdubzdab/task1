@@ -63,10 +63,10 @@ class ArticlesController < ApplicationController
   end
 
   def destroy
-    if @article.destroy
-        render nothing: true
-    else
-        render js: "alert('error saving article');"
+    @article.destroy
+      respond_to do |format|
+        format.html { redirect_to articles_url }
+        format.js  { }
     end
   end
 
