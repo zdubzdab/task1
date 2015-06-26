@@ -49,5 +49,7 @@ end
     gem 'web-console', '~> 2.0'
   end
 
+  gem 'quiet_assets', group: :development
+
 
 
