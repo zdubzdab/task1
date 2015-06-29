@@ -22,6 +22,9 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   def confirmation_required?
-      false
-    end
+    false
+  end
+
+  after_save -> { self.touch }#update cache in articles table after user updating
+
 end

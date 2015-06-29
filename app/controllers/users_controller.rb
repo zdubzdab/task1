@@ -8,8 +8,8 @@ class UsersController < ApplicationController
   end
   
   def index
-    sleep 2
-    @users = User.paginate(page: params[:page], per_page: 2).order("created_at DESC")
+    # sleep 2
+    @users = User.paginate(page: params[:page], per_page: 3).order("created_at DESC")
   end
 
   def create
