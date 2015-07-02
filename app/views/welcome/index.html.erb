@@ -1,3 +1,22 @@
-<h1>Hello, Rails!</h1>
-<%= link_to 'Ресурс Articles', controller: 'articles' %>
-||||||||||||||||||<%= link_to 'Ресурс Users', controller: 'users' %>
+<div class="center hero-unit"><br>
+<% if user_signed_in? %>
+    <h3 class="welcome">Hello,  <span><i><%= current_user.name %></i></span>,   Welcome to "TASK"</h3>
+    <h4>
+      <button class="button", id="home"><%= link_to 'Home',  user_session_path %></button>
+      <button class="button", id="sign_out"><%= link_to 'Sign out', destroy_user_session_path, :method => :delete %></button>
+    </h4>
+
+<% else %>
+    <h3 class="welcome">Welcome to "TASK"</h3>
+    <button class="button", id="log_in"><%= link_to 'Log in', new_user_session_path %></button>
+    <button class="button", id="sign_up"><%= link_to 'Sign up', new_user_registration_path %></button>
+    <button class="button_big", id="go_in"><%= link_to 'Go in without registration', users_path %></button>
+    <br><br><br><br><br>
+<% end %>
+</div>
+<div class="span5"></div><%= image_tag("images.jpg", size: "180x120") %>
+<div class="span3 offset8"></div>
+<div class="span3 offset8"></div>
+
+
+

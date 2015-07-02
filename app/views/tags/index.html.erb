@@ -1,0 +1,33 @@
+<div class="span2">
+  <%= link_to 'New tag', new_tag_path %>
+</div>
+<div class="span10">
+  <h3>Listing Tags</h3> 
+  <table class="table table-bordered table-condensed table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Articles</th>
+      <th>Show</th> 
+      <th>Edit</th>
+      <th>Destroy</th>
+    </tr>
+  <% @tags.each do |tag| %>
+    <tr> 
+      <td><%= tag.name %></td>
+      <td><%= tag.articles.map(&:title).join(', ') %></td>
+      <td><%= link_to 'Show', tag_path(tag) %></td>
+      <td><%= link_to 'Edit', edit_tag_path(tag) %></td>
+      <td><%= link_to 'Destroy', tag_path(tag),
+                      method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
+  <% end %>
+  </table>
+</div>
+
+  <div class="pagination pagination-centered">
+    <ul>
+      <li class="active"><span><%= will_paginate @tags %></span></li>
+    </ul>
+  </div>
+  
+

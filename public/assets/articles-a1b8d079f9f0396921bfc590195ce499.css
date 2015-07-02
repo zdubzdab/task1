@@ -1,0 +1,38 @@
+@charset "UTF-8";
+/* line 1, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/articles.css.scss */
+#article_table {
+  margin-left: 0%;
+  margin-top: 3%;
+  margin-down: 30px;
+}
+
+/* line 6, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/articles.css.scss */
+#title_center {
+  text-align: center;
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  margin: 5px;
+}
+
+/* line 12, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/articles.css.scss */
+#by {
+  text-align: right;
+}
+
+/*розміри text_field і select у формі для створення і редагування article*/
+/* line 16, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/articles.css.scss */
+.text_field {
+  width: 170px;
+}
+
+/* line 19, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/articles.css.scss */
+#article_user_id {
+  width: 170px;
+}
+
+/* обмежений доступ для незареєстрованих users при створенні/редагуванні articles */
+/* line 23, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/articles.css.scss */
+.sign_out {
+  color: #08c;
+  cursor: pointer;
+}

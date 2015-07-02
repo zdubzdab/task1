@@ -1,0 +1,27 @@
+<ol>
+  <div class="span11" id="comment">
+    <div class="span3" id="author">
+      <p>
+        <%= comment.user.try(&:name) %>
+        <%= link_to user_path(@user) do %>
+          <i class="fa fa-user fa-2x" id="icon_user"></i>
+        <% end %>
+      </p>
+    </div>
+    <div class="span10" id="comment_text">
+      <div class="span1" id="delete_comment">
+        <p>
+          <%= link_to [comment.article, comment],
+             method: :delete, remote: true,
+             data: { confirm: 'Are you sure?' }, id: "logo" do %>
+               <i class="fa fa-remove "></i>
+             <% end %>
+        </p>
+    </div>
+      <p id="comment_p"><%= comment.commenter %></p>
+    </div>
+    <div class="span3" id="created_at">
+      <p><%= comment.created_at %></p>
+    </div>
+  </div><br>
+</ol>

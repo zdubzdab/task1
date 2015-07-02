@@ -1,3 +1,29 @@
-// Place all the styles related to the users controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+/*show*/
+  #users_articles {
+    font-size: 16px;
+  }
+  #link_back{
+  font-size: 16px;
+
+  }
+  #left_part{
+  margin-left: 3%;
+  }
+/*index*/
+  #user_table {
+    margin-left: 0%;
+    margin-top: 3%;
+  }
+  #pagination_user {
+    position:relative;
+    top:0%;
+    left:0%;
+    font-weight: bold;
+  }
+    .title {
+    font-size: 22px;
+    position:relative;
+    left:0%;
+    top:0%;
+    margin-top: 3%;
+  }

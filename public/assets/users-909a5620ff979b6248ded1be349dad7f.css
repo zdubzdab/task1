@@ -1,0 +1,39 @@
+/*show*/
+/* line 2, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/users.css.scss */
+#users_articles {
+  font-size: 16px;
+}
+
+/* line 5, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/users.css.scss */
+#link_back {
+  font-size: 16px;
+}
+
+/* line 9, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/users.css.scss */
+#left_part {
+  margin-left: 3%;
+}
+
+/*index*/
+/* line 13, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/users.css.scss */
+#user_table {
+  margin-left: 0%;
+  margin-top: 3%;
+}
+
+/* line 17, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/users.css.scss */
+#pagination_user {
+  position: relative;
+  top: 0%;
+  left: 0%;
+  font-weight: bold;
+}
+
+/* line 23, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/users.css.scss */
+.title {
+  font-size: 22px;
+  position: relative;
+  left: 0%;
+  top: 0%;
+  margin-top: 3%;
+}

@@ -1,0 +1,21 @@
+/* line 1, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/raitings.css.scss */
+#rating {
+  text-align: left;
+  position: relative;
+  left: 5%;
+}
+
+/* line 6, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/raitings.css.scss */
+#create_raiting {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* line 10, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/raitings.css.scss */
+#voting_message {
+  text-align: center;
+  background: #EBE0D6;
+  margin: 15px;
+  position: relative;
+  left: 6%;
+}

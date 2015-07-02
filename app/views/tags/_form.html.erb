@@ -1,0 +1,30 @@
+ <%= form_for @tag do |f| %> 
+  <% if @tag.errors.any? %> 
+  <div id="error_explanation"> 
+    <h4><%= pluralize(@tag.errors.count, "error") %> prohibited
+      this tag from being saved:</h4>
+    <ul>
+    <% @tag.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+ 
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %> 
+  </p>
+  <p> 
+    <%= f.label :article_ids, "Articles" %><br>
+    <%= f.select :article_ids, options_for_select(Article.all.map{|a| [a.title, a.id]}), {}, {:multiple => true} %>
+  </p>
+  <p> 
+    <%= f.label :user_ids, "Users" %><br>
+    <%= f.select :user_ids, options_for_select(User.all.map{|t| [t.name, t.id]}), {}, {:multiple => true} %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+  <% end %>
+  

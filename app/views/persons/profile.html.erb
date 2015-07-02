@@ -1,0 +1,28 @@
+<div class="span2">
+<!--   <%= link_to 'New tag', tags_path, id: "new_link" %><br> 
+  <%= link_to 'New article', articles_path, id: "new_linka" %><br><br> -->
+  <%= link_to 'Edit my profile',  edit_user_registration_path  %><br>
+  <%= link_to 'Sign out', destroy_user_session_path, method: :delete %><br>
+  <%= link_to 'Destroy account', user_registration_path, data: {confirm: 'Are you sure?'}, method: :delete %>
+</div> 
+<div class="span10" id="right_part">
+  <div id="ava"><%= image_tag (current_user.avatar.url(:large)) %></div> 
+  <p id="name">My name: <%= current_user.name %><br>
+                  My email: <%= current_user.email %></p><br><br>
+  <p id="my">I have <%= current_user.articles.count %> articles and <%= current_user.tags.count %> tags.</p><br>
+
+<div id="my_articles">
+  <% if current_user.articles.any? %>
+  <h4>My articles:</h4>
+    <% @articles.each do |article| %>
+      <ol class="list">
+        <b><%= link_to (article.title), article_path(article) %></b> (posted <%= time_ago_in_words(article.created_at) %> ago)
+      </ol>
+    <% end %>
+  <% end %>
+</div>
+  <br><br><br><br><br><br><br><br>
+</div> 
+
+
+

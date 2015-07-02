@@ -1,12 +1,24 @@
-<p>
-  <strong>Name:</strong>
-  <%= @user.name %>
-</p>
- 
-<p>
-  <strong>Email:</strong>
-  <%= @user.email %>
-</p> 
-<%= link_to 'Edit', edit_user_path %>
+<div class="span4" id="left_part">
+  <div id="ava"><%= image_tag @user.avatar.url(:display) %></div>
+  <p id="name">User's name: <%= @user.name %><br>
+      User's email: <%= @user.email %></p>
+  <p id="name">User has <%= @user.articles.count %> articles and <%= @user.tags.count %> tags</p>
+</div>
 
-<%= link_to 'Back', users_path %>
+<div id="users_articles" class="span7">
+  <% if @user.articles.any? %>
+    <h4>User's articles:</h4>
+    <% @articles.each do |article| %>
+    <ol class="list">
+      <b><%= link_to (article.title), article_path(article) %></b>
+       (posted <%= time_ago_in_words(article.created_at) %> ago)
+      <br>
+    </ol>
+    <% end %>
+  <% end %>
+</div><br>
+<div class="span12" id="link_back">
+  <p><%= link_to 'Back', users_path %></p>
+</div>
+
+

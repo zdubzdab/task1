@@ -1,0 +1,1 @@
+$(document).ready(function(){$("body").on("click",".save_article",function(){var e=$(this).closest(".new_article").serialize();return $.ajax({url:"articles",type:"post",data:e,success:function(e){$("#articles_form").remove(),$("#link_to_create_a").show(),$("#new_article").append(e)}}),!1})});

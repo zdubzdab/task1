@@ -1,0 +1,26 @@
+<table id="article_table" class="table table-bordered table-condensed table-striped">
+  <tr>
+    <th style="width: 5%">Raiting</th>
+    <th style="width: 11%">Title</th>
+    <th style="width: 11%">Text</th>
+    <th style="width: 9%">User</th>
+    <th style="width: 12%">Articles tags</th>
+    <th style="width: 7%">Show</th>
+    <th style="width: 6%">Edit</th>
+    <th style="width: 7%">Destroy</th>
+  </tr>
+  <% @articles.each do |article| %> 
+    <% cache [article, article.user] do %>
+      <tr>
+        <td><%= average_raiting (article.raitings.average(:value)) %></td>
+        <td><%= article.title %></td>
+        <td><%= article.text %></td>
+        <td><%= article.user.try(&:name) %></td>
+        <td><%= tag_from_article (article.tags.to_a) %></td>
+        <td><%= link_to 'Show', article_path(article) %></td>
+        <td><%= link_to 'Edit', edit_article_path(article), remote: true, class: 'editarticle_table' %></td>
+        <td><%= link_to 'Destroy', article_path(article), method: :delete, data: { confirm: 'Are you sure?' }, remote: true, class: 'delete_article' %></td>
+      </tr>
+    <% end %>
+  <% end %>
+</table>

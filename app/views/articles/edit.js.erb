@@ -1,0 +1,6 @@
+  $("#link_to_create_a").hide().after('<%= j render("form") %>');
+  $('.new_article').remove();
+  $('body').on('ajax:success', '.editarticle_table', function() {
+      $(this).closest('tr').fadeOut();
+  });
+
