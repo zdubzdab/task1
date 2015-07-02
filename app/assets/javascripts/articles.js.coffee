@@ -1,5 +1,4 @@
-ready = ->
-
+$ ->
 # обмежений доступ до articles (js)
   $(document).on 'ajax:error', (e, xhr, settings) ->
     if xhr.status == 401
@@ -19,8 +18,7 @@ ready = ->
         $(".new_article").append data
         $(".edit_article").append data
 
-$(document).ready(ready)
-$(document).on('page:load', ready)
+
 
 
 

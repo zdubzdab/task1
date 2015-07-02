@@ -1,6 +1,5 @@
-ready = ->
-
-# create
+$ ->
+#create
   $(".button_create_comment").click ->
     variable_new = $(this).closest("form").serialize()
     $.ajax
@@ -11,11 +10,9 @@ ready = ->
         $('.text_field_commenter').val("")
         $("#new_comment").append data
 
+#show/hide comments
   $("#comments_link").click ->
     $("#comment_section").toggle()
-
-$(document).ready(ready)
-$(document).on('page:load', ready)
 
 
 

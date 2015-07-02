@@ -1,0 +1,1 @@
+(function(){$(function(){return $("body").on("click",".pagination a",function(){return $("#pagination_user").html("Page is loading..."),$.get(this.href,null,null,"script"),!1})})}).call(this);

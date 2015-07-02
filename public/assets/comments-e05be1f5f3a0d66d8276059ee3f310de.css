@@ -1,0 +1,81 @@
+/* line 1, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+#comment {
+  position: relative;
+  left: 0%;
+  top: 10%;
+  margin: 10px;
+}
+
+/* line 7, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+#comment_text {
+  background: #F7FBFF;
+  padding: 10px;
+  padding-bottom: 5px;
+  margin: 0px;
+  border: 1px solid #0099FF;
+}
+
+/* line 14, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+#author {
+  background: #F7FBFF;
+  position: relative;
+  left: 0%;
+  top: 0%;
+  padding-top: 5px;
+  padding-left: 10px;
+  border: 1px solid #0099FF;
+}
+
+/* line 23, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+#created_at {
+  background: #F7FBFF;
+  position: relative;
+  left: 57.2%;
+  top: 0%;
+  padding-top: 5px;
+  padding-left: 10px;
+  border: 1px solid #0099FF;
+}
+
+/* line 32, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+#icon_user {
+  position: absolute;
+  left: 85%;
+}
+
+/* line 36, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+#delete_comment {
+  position: relative;
+  left: 97.7%;
+  padding-top: -10px;
+  padding-left: 0px;
+  margin-top: -15px;
+  margin-bottom: 10px;
+}
+
+/* line 44, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+#comment_p {
+  position: relative;
+  left: -5%;
+}
+
+/* line 48, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+.text_field_commenter {
+  width: 700px;
+}
+
+/* line 51, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+#add_comment {
+  margin: 30px;
+  margin-left: 40px;
+}
+
+/* line 55, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+#new_comment {
+  margin-left: 0px;
+}
+
+/* line 58, /home/zdubzdab/rails_projects/task1/app/assets/stylesheets/comments.css.scss */
+#comment_section {
+  display: none;
+}
